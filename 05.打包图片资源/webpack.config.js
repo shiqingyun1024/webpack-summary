@@ -1,4 +1,5 @@
 const { resolve } = require('path');
+// 打包html文件
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // 入口文件
@@ -39,7 +40,7 @@ module.exports = {
                     esModule:false,
                     // 给图片进行重命名
                     // [hash:8]取图片的hash的前8位
-                    // [ext]取文件原来扩展名
+                    // [ext]取文件原来的扩展名
                     name:'[hash:8].[ext]'
                 },
             },
@@ -51,10 +52,9 @@ module.exports = {
             }
         ]
     },
-    // plugins
-    plugins: [
+    plugins:[
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template:'./src/index.html'
         })
     ],
     // 模式

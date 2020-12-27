@@ -33,3 +33,8 @@ template:'./src/index.html'
 打包样式资源主要用到url-loader，因为url-loader依赖于file-loader，所以也要安装file-loader。
 对于html中的img图片的处理，需要安装html-loader，html-loader用于把img引入，会转化为如下的格式，如：require(“images/vue.jpg”);然后由url-loader进行处理。
 因为html-loader是commonjs格式，url-loader是es6Module格式，所以要在url-loader中进行处理 esModule:false
+
+#### 06 打包其他资源
+打包其他资源主要是包括字体图标等，主要用file-loader来处理这些资源，原理一般都是直接拷贝到打包库里面，不进行任何转化处理。
+同时使用clean-webpack-plugin来清除build文件夹，这样每次打包，里面都是最新的打包文件，把之前的删除掉了。通过cleanAfterEveryBuildPatterns来设置打包时清空的文件夹。
+cleanAfterEveryBuildPatterns:['build']
