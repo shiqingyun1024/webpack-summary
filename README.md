@@ -38,3 +38,21 @@ template:'./src/index.html'
 打包其他资源主要是包括字体图标等，主要用file-loader来处理这些资源，原理一般都是直接拷贝到打包库里面，不进行任何转化处理。
 同时使用clean-webpack-plugin来清除build文件夹，这样每次打包，里面都是最新的打包文件，把之前的删除掉了。通过cleanAfterEveryBuildPatterns来设置打包时清空的文件夹。
 cleanAfterEveryBuildPatterns:['build']
+
+#### 07 devServer
+开发服务器，这个在开发环境中非常有用，节省了很多不必要的操作，实现自动化操作。
+// 开发服务器 devServer: 用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~~）
+// 特点：只会在内存中编译打包，不会有任何输出（如果直接运行npx webpack-dev-server，是没有输出的，不会生成build文件夹，因为是在内存中编译打包。运行webpack会有输出，输出build文件夹）
+// 启动devServer指令为：npx webpack-dev-server，因为没有全局安装，所以用npx webpack-dev-server，如果全局安装了，可以直接webpack-dev-server，但是没有必要。
+// webapck全局安装了，所以可以直接用webpack，如果没有全局安装，就用 npx webpack
+// 一定要安装webpack-dev-server
+devServer: {
+// 项目构建后路径
+contentBase: resolve(__dirname, 'build'),
+// 启动gzip压缩
+compress: true,
+// 启动服务的端口号
+port: 3000,
+// 自动打开浏览器
+open:true
+}
