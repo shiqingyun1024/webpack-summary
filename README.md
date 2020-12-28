@@ -56,3 +56,26 @@ port: 3000,
 // 自动打开浏览器
 open:true
 }
+
+### 08 开发环境配置
+把上面7项整合起来，就是开发环境的配置了
+/*
+开发环境配置：能让代码运行即可
+运行命令：webpack
+npx webpack-dev-server
+
+webpack运行之后将打包结果输出，
+webpack-dev-server在内存中编译，不会输出结果。
+*/
+// 其他资源,字体图标等
+{
+// 排除
+exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,
+loader: 'file-loader',
+options: {
+name: '[hash:8].[ext]',
+// 指定输出的文件夹名
+outputPath:'media'
+}
+}
+指定输出的文件名用outputPath
