@@ -116,3 +116,5 @@ MiniCssExtractPlugin.loader,
 },
 
 MiniCssExtractPlugin.loader这个配置很重要，它取代了style-loader，把css从js中提取到一个css文件中。
+<link href="css/built.css" rel="stylesheet">
+提取出来之后html-webpack-plugin会通过link标签把它引入打包后的html中，这样就不会存在白屏现象了。
