@@ -79,3 +79,40 @@ outputPath:'media'
 }
 }
 // 指定输出的文件名用outputPath
+
+#### 构建环境介绍：
+开发环境：
+生产环境所做的事情：1、css转化js，js文件太大，加载太慢，所以需要把css抽离出来，style标签加载css文件会有白屏现象，所以生产环境解决这个问题。这个问题09.提取css成单独文件会解答。
+2、代码体积很大，进行压缩。
+3、兼容性处理等。
+4、等等
+
+#### 09.提取css成单独文件
+为什么提取css成单独文件，因为css转化js，js文件太大，加载太慢，所以需要把css抽离出来。
+mini-css-extract-plugin就是专门解决这个问题的，把css从js中提取出来
+首先，引入const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+然后再plugins进行配置
+// 提取js文件的css文件
+new MiniCssExtractPlugin({
+// 对输出的css文件进行重命名
+filename:'css/built.css'
+})
+在loader中进行配置：
+// loader配置
+module:{
+rules:[
+{
+test:/\.css$/,
+use:[
+// 创建style标签，将样式放入
+// 'style-loader',
+// 这个loader取代style-loader。作用：提取js中的css成单独文件
+MiniCssExtractPlugin.loader,
+// 将css文件整合到js文件中
+'css-loader'
+]
+}
+]
+},
+
+MiniCssExtractPlugin.loader这个配置很重要，它取代了style-loader，把css从js中提取到一个css文件中。
