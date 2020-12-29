@@ -36,7 +36,10 @@ module.exports = {
             cleanAfterEveryBuildPatterns:['build']
         }),
         // 提取js文件的css文件
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin({
+            // 对输出的css文件进行重命名
+            filename:'css/built.css'
+        })
     ],
     // 模式
     mode: 'development'
