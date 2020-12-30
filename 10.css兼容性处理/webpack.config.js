@@ -59,16 +59,16 @@ module.exports = {
                 //  修改loader的配置
                 {
                     loader: 'postcss-loader',
-                    options: {
-                        // 这个地方写postcss，千万别写成postcss-loader了
-                        ident: 'postcss',
-                        // 记住这里返回的是数组，一定要记住，刚开始写成对象了
-                        plugins: () => [
-                            // postcss的插件
-                            require('postcss-preset-env')()
+                    // options: {
+                    //     // 这个地方写postcss，千万别写成postcss-loader了
+                    //     ident: 'postcss',
+                    //     // 记住这里返回的是数组，一定要记住，刚开始写成对象了
+                    //     plugins: () => [
+                    //         // postcss的插件
+                    //         require('postcss-preset-env')()
 
-                        ]
-                    }
+                    //     ]
+                    // }
                 }
             ]
         }]

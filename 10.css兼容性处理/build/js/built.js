@@ -90,10 +90,11 @@
 /*!***********************!*\
   !*** ./src/css/a.css ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\\nValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'plugins'. These properties are valid:\\n   object { postcssOptions?, execute?, sourceMap? }\\n    at validate (/Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/schema-utils/dist/validate.js:104:11)\\n    at Object.loader (/Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/postcss-loader/dist/index.js:43:29)\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/webpack/lib/NormalModule.js:316:20\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/loader-runner/lib/LoaderRunner.js:367:11\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/loader-runner/lib/LoaderRunner.js:233:18\");\n\n//# sourceURL=webpack:///./src/css/a.css?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/a.css?");
 
 /***/ }),
 
@@ -101,10 +102,11 @@ eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extrac
 /*!***********************!*\
   !*** ./src/css/b.css ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\\nModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\\nValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.\\n - options has an unknown property 'plugins'. These properties are valid:\\n   object { postcssOptions?, execute?, sourceMap? }\\n    at validate (/Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/schema-utils/dist/validate.js:104:11)\\n    at Object.loader (/Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/postcss-loader/dist/index.js:43:29)\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/webpack/lib/NormalModule.js:316:20\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/loader-runner/lib/LoaderRunner.js:367:11\\n    at /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/10.css兼容性处理/node_modules/loader-runner/lib/LoaderRunner.js:233:18\");\n\n//# sourceURL=webpack:///./src/css/b.css?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/b.css?");
 
 /***/ }),
 
@@ -116,7 +118,7 @@ eval("throw new Error(\"Module build failed (from ./node_modules/mini-css-extrac
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/a.css */ \"./src/css/a.css\");\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_a_css__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/b.css */ \"./src/css/b.css\");\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_b_css__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/a.css */ \"./src/css/a.css\");\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/b.css */ \"./src/css/b.css\");\n\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 
