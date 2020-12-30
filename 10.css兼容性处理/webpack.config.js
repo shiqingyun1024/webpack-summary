@@ -9,6 +9,9 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
+
+// 设置nodejs的环境变量
+process.env.NODE_ENV = 'development';
 // webpack是基于node环境，所以遵循commonjs规范
 module.exports = {
     // 入口文件
@@ -16,7 +19,7 @@ module.exports = {
     // 出口文件
     output: {
         // 文件名
-        filename: 'build/js/built.js',
+        filename: 'js/built.js',
         path: resolve(__dirname, 'build')
 
     },
@@ -36,7 +39,7 @@ module.exports = {
                     
                     "browserslist":{
      "development":[
-        开发环境
+        开发环境 如果想用开发环境就需要设置node环境变量：process.env.NODE_ENV = "development"
     //   last 1 chrome version意思是兼容最近的一个chrome浏览器版本
        "last 1 chrome version",
        "last 1 firefox version",
@@ -57,13 +60,14 @@ module.exports = {
                 {
                     loader: 'postcss-loader',
                     options: {
-                        ident: 'postcss-loader',
-                        plugins: () => {
+                        // 这个地方写postcss，千万别写成postcss-loader了
+                        ident: 'postcss',
+                        // 记住这里返回的是数组，一定要记住，刚开始写成对象了
+                        plugins: () => [
                             // postcss的插件
                             require('postcss-preset-env')()
 
-                        }
-
+                        ]
                     }
                 }
             ]
@@ -80,7 +84,7 @@ module.exports = {
         // 提取js文件的css文件
         new MiniCssExtractPlugin({
             // 对输出的文件进行重命名
-            filename: 'build/css/built.css'
+            filename: 'css/built.css'
         })
 
     ],

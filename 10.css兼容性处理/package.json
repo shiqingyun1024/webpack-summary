@@ -22,13 +22,12 @@
   },
   "browserslist":{
      "development":[
-      //  last 1 chrome version意思是兼容最近的一个chrome浏览器版本
        "last 1 chrome version",
        "last 1 firefox version",
        "last 1 safari version"
      ],
      "production":[
-       ">0.2%",// 大于99.8%的浏览器
+       ">0.2%",
        "not dead",
        "not op_mini all"
      ]
