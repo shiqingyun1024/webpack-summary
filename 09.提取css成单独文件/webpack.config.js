@@ -19,7 +19,7 @@ module.exports = {
               use:[
                 //   创建style标签，将样式放入
                 //   'style-loader',
-                //   这个loader取代style-loader。作用：提取js中的css成单独文件
+                //   这个loader取代style-loader。作用：提取js中的css成单独文件，这一步是关键
                 MiniCssExtractPlugin.loader,
                 //   将css文件整合到js文件中
                   'css-loader'
