@@ -9,6 +9,8 @@
     "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.3.3",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
     "style-loader": "^2.0.0"
   },
   "devDependencies": {
@@ -17,6 +19,19 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "browserslist":{
+     "development":[
+      //  last 1 chrome version意思是兼容最近的一个chrome浏览器版本
+       "last 1 chrome version",
+       "last 1 firefox version",
+       "last 1 safari version"
+     ],
+     "production":[
+       ">0.2%",// 大于99.8%的浏览器
+       "not dead",
+       "not op_mini all"
+     ]
   },
   "author": "",
   "license": "ISC"
