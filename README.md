@@ -118,3 +118,9 @@ MiniCssExtractPlugin.loader,
 MiniCssExtractPlugin.loader这个配置很重要，它取代了style-loader，把css从js中提取到一个css文件中。
 <link href="css/built.css" rel="stylesheet">
 提取出来之后html-webpack-plugin会通过link标签把它引入打包后的html中，这样就不会存在白屏现象了。
+
+#### 10.css兼容性处理
+兼容性处理用postcss
+css兼容性处理：postcss--->postcss-loader postcss-preset-env
+其中postcss-preset-env用于识别某些环境，从而加载指定的配置。能够让兼容性精确到每一个版本。
+postcss-preset-env帮postcss找到package.json中browserslist里面的配置，通过配置加载指定的css兼容性样式。
