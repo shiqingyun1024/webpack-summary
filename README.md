@@ -139,6 +139,23 @@ browserslist配置如下：<br>
 "not dead",<br>
 "not op_mini all"<br>
 ]<br>
-},
+},<br>
+
+//  使用loader有两种方式，1、使用loader的默认配置。2、修改loader的配置  <br>
+                //  使用loader的默认配置，如下<br>
+                //  ’postcss-loader‘  <br>
+                //  修改loader的配置<br>
+                {<br>
+                    loader: 'postcss-loader',<br>
+                    // options: {<br>
+                    //     // 这个地方写postcss，千万别写成postcss-loader了<br>
+                    //     ident: 'postcss',<br>
+                    //     // 记住这里返回的是数组，一定要记住，刚开始写成对象了<br>
+                    //     plugins: () => [<br>
+                    //         // postcss的插件<br>
+                    //         require('postcss-preset-env')()<br>
+                    //     ]<br>
+                    // }<br>
+                }<br>
 
 
