@@ -40,44 +40,44 @@ template:'./src/index.html'<br>
 cleanAfterEveryBuildPatterns:['build']
 
 #### 07 devServer
-开发服务器，这个在开发环境中非常有用，节省了很多不必要的操作，实现自动化操作。
-// 开发服务器 devServer: 用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~~）
-// 特点：只会在内存中编译打包，不会有任何输出（如果直接运行npx webpack-dev-server，是没有输出的，不会生成build文件夹，因为是在内存中编译打包。运行webpack会有输出，输出build文件夹）
-// 启动devServer指令为：npx webpack-dev-server，因为没有全局安装，所以用npx webpack-dev-server，如果全局安装了，可以直接webpack-dev-server，但是没有必要。
-// webapck全局安装了，所以可以直接用webpack，如果没有全局安装，就用 npx webpack
-// 一定要安装webpack-dev-server
-devServer: {
-// 项目构建后路径
-contentBase: resolve(__dirname, 'build'),
-// 启动gzip压缩
-compress: true,
-// 启动服务的端口号
-port: 3000,
-// 自动打开浏览器
-open:true
+开发服务器，这个在开发环境中非常有用，节省了很多不必要的操作，实现自动化操作。<br>
+// 开发服务器 devServer: 用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~~）<br>
+// 特点：只会在内存中编译打包，不会有任何输出（如果直接运行npx webpack-dev-server，是没有输出的，不会生成build文件夹，因为是在内存中编译打包。运行webpack会有输出，输出build文件夹）<br>
+// 启动devServer指令为：npx webpack-dev-server，因为没有全局安装，所以用npx webpack-dev-server，如果全局安装了，可以直接webpack-dev-server，但是没有必要。<br>
+// webapck全局安装了，所以可以直接用webpack，如果没有全局安装，就用 npx webpack<br>
+// 一定要安装webpack-dev-server<br>
+devServer: {<br>
+// 项目构建后路径<br>
+contentBase: resolve(__dirname, 'build'),<br>
+// 启动gzip压缩<br>
+compress: true,<br>
+// 启动服务的端口号<br>
+port: 3000,<br>
+// 自动打开浏览器<br>
+open:true<br>
 }
 
 #### 08 开发环境配置
-把上面7项整合起来，就是开发环境的配置了
+把上面7项整合起来，就是开发环境的配置了<br>
 /*
-开发环境配置：能让代码运行即可
-运行命令：webpack
-npx webpack-dev-server
+开发环境配置：能让代码运行即可<br>
+运行命令：webpack<br>
+npx webpack-dev-server<br>
 
-webpack运行之后将打包结果输出，
-webpack-dev-server在内存中编译，不会输出结果。
+webpack运行之后将打包结果输出，<br>
+webpack-dev-server在内存中编译，不会输出结果。<br>
 */
-// 其他资源,字体图标等
-{
-// 排除
-exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,
-loader: 'file-loader',
-options: {
-name: '[hash:8].[ext]',
-// 指定输出的文件夹名
-outputPath:'media'
-}
-}
+// 其他资源,字体图标等<br>
+{<br>
+// 排除<br>
+exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,<br>
+loader: 'file-loader',<br>
+options: {<br>
+name: '[hash:8].[ext]',<br>
+// 指定输出的文件夹名<br>
+outputPath:'media'<br>
+}<br>
+}<br>
 // 指定输出的文件名用outputPath
 
 #### 构建环境介绍：
@@ -125,4 +125,20 @@ css兼容性处理：postcss--->postcss-loader postcss-preset-env<br>
 其中postcss-preset-env用于识别某些环境，从而加载指定的配置。能够让兼容性精确到每一个版本。<br>
 postcss-preset-env帮postcss找到package.json中browserslist里面的配置，通过配置加载指定的css兼容性样式。<br>
 browserslist配置如下：<br>
+"browserslist":{<br>
+  "development":[<br>
+// 开发环境 如果想用开发环境就需要设置node环境变量：process.env.NODE_ENV = "development"<br>
+// last 1 chrome version意思是兼容最近的一个chrome浏览器版本<br>
+"last 1 chrome version",<br>
+"last 1 firefox version",<br>
+"last 1 safari version"<br>
+],<br>
+// 生产环境：默认是看生产环境<br>
+"production":[<br>
+">0.2%",// 大于99.8%的浏览器<br>
+"not dead",<br>
+"not op_mini all"<br>
+]<br>
+},
+
 
