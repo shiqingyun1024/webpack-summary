@@ -1,6 +1,8 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+// 提取css成单独文件
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // webpack基于node，所以遵循commonjs规范
 module.exports = {
     // 入口文件
@@ -17,6 +19,7 @@ module.exports = {
                 test:/\.css$/,
                 use:[
                     // 把css转化为js
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
                 ]
             }
@@ -31,6 +34,9 @@ module.exports = {
         // 每次打包清空build文件夹
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns:['build']
+        }),
+        new MiniCssExtractPlugin({
+            filename:'css/built.css'
         })
 
     ],
