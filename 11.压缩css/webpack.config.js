@@ -3,6 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // 提取css成单独文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// 兼容性处理
+
 // webpack基于node，所以遵循commonjs规范
 module.exports = {
     // 入口文件
@@ -22,6 +24,10 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                 ]
+            },
+            // 处理兼容性
+            {
+                loader:'postcss-loader'
             }
         ]
     },
