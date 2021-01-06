@@ -24,8 +24,13 @@ module.exports = {
     },
     // plugins的配置
     plugins:[
+        // 复制html到build中
         new HtmlWebpackPlugin({
             template:'./src/index.html'
+        }),
+        // 每次打包清空build文件夹
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns:['build']
         })
 
     ],
