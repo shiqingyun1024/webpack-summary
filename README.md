@@ -161,6 +161,13 @@ browserslist配置如下：<br>
                 如果按照上面写，会报错，如下：<br>
 报错：ValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.<br>
  - options has an unknown property 'plugins'. These properties are valid:<br>
-具体怎么解决，请看我的这篇博客。https://blog.csdn.net/xiaolinlife/article/details/112056848
+具体怎么解决，请看我的这篇博客。https://blog.csdn.net/xiaolinlife/article/details/112056848<br>
+<br>
+#### 11.压缩css
+压缩css的插件是：<br>
+optimize-css-assets-webpack-plugin<br>
+直接使用：<br>
+// 压缩css<br>
+new OptimizeCssAssetsWebpackPlugin()<br>
 
 
