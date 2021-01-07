@@ -14,6 +14,24 @@ module.exports = {
     // loader的配置
     module:{
         rules:[
+            /*
+            语法检查：eslint-loader  eslint库
+            注意：只检查自己写的源代码，第三方的库是不用检查的
+            设置检查规则：
+            在package.json中eslintConfig中设置
+            "eslintConfig":{
+                "extends":"airbnb-base"
+            }
+            airbnb --> 需要三个库 eslint-config-airbnb-base  eslint  eslint-plugin-import.
+            所以要安装：eslint-loader eslint-config-airbnb-base  eslint  eslint-plugin-import
+            */ 
+           {
+               test:/\.js$/,
+               // 排除第三方的检查
+               excludes:/node_modules/,
+               loader:'eslint-loader',
+               options:{}
+           }
 
         ]
     },
