@@ -1,6 +1,6 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 // 提取css成单独文件
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 兼容性处理
