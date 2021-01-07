@@ -1,115 +1,12 @@
-Html Webpack Plugin:
-<pre>
-  Error: Child compilation failed:
-  Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
-  SyntaxError
-  (1:1) /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/11.压缩css/src/inde  x.html Unknown word
-  > 1 | <!DOCTYPE html>
-      | ^
-    2 | <html lang="en">
-    3 | <head>
-  :
-  SyntaxError: SyntaxError
-  (1:1) /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/11.压缩css/src/inde  x.html Unknown word
-  > 1 | <!DOCTYPE html>
-      | ^
-    2 | <html lang="en">
-    3 | <head>
-  ModuleBuildError: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
-  SyntaxError
-  (1:1) /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/11.压缩css/src/inde  x.html Unknown word
-  > 1 | <!DOCTYPE html>
-      | ^
-    2 | <html lang="en">
-    3 | <head>
-  
-  - NormalModule.js:316 
-    [11.压缩css]/[webpack]/lib/NormalModule.js:316:20
-  
-  - LoaderRunner.js:367 
-    [11.压缩css]/[loader-runner]/lib/LoaderRunner.js:367:11
-  
-  - LoaderRunner.js:233 
-    [11.压缩css]/[loader-runner]/lib/LoaderRunner.js:233:18
-  
-  - LoaderRunner.js:111 context.callback
-    [11.压缩css]/[loader-runner]/lib/LoaderRunner.js:111:13
-  
-  - index.js:101 Object.loader
-    [11.压缩css]/[postcss-loader]/dist/index.js:101:7
-  
-  - child-compiler.js:131 
-    [11.压缩css]/[html-webpack-plugin]/lib/child-compiler.js:131:18
-  
-  - Compiler.js:343 
-    [11.压缩css]/[webpack]/lib/Compiler.js:343:11
-  
-  - Compiler.js:681 
-    [11.压缩css]/[webpack]/lib/Compiler.js:681:15
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compiler.js:678 
-    [11.压缩css]/[webpack]/lib/Compiler.js:678:31
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1423 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1423:35
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1414 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1414:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1409 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1409:36
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1405 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1405:32
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1342 Compilation.seal
-    [11.压缩css]/[webpack]/lib/Compilation.js:1342:27
-  
-  - Compiler.js:675 
-    [11.压缩css]/[webpack]/lib/Compiler.js:675:18
-  
-  - Compilation.js:1261 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1261:4
-  
-  
-  - Hook.js:154 AsyncSeriesHook.lazyCompileHook
-    [11.压缩css]/[tapable]/lib/Hook.js:154:20
-  
-  - Compilation.js:1253 Compilation.finish
-    [11.压缩css]/[webpack]/lib/Compilation.js:1253:28
-  
-  - Compiler.js:672 
-    [11.压缩css]/[webpack]/lib/Compiler.js:672:17
-  
-  
-  - Compilation.js:1185 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1185:12
-  
-  - Compilation.js:1097 
-    [11.压缩css]/[webpack]/lib/Compilation.js:1097:9
-  
-</pre><script src="js/index.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>压缩css</title>
+<link href="css/built.css" rel="stylesheet"></head>
+<body>
+    <div id="box1"></div>
+    <div id="box2"></div>
+<script src="js/index.js"></script></body>
+</html>

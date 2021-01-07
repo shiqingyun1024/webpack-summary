@@ -86,14 +86,39 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/css/a.css":
+/*!***********************!*\
+  !*** ./src/css/a.css ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/a.css?");
+
+/***/ }),
+
+/***/ "./src/css/b.css":
+/*!***********************!*\
+  !*** ./src/css/b.css ***!
+  \***********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack:///./src/css/b.css?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):\\nSyntaxError\\n\\n(1:1) /Users/shixiaolin/Documents/webpack/webpack资料/webpack学习系列/webpack/webpack-summary/11.压缩css/src/js/index.js Unknown word\\n\\n\\u001b[1m\\u001b[31m>\\u001b[39m\\u001b[22m\\u001b[90m 1 | \\u001b[39mimport \\u001b[32m'../css/a.css'\\u001b[39m\\u001b[33m;\\u001b[39m\\n \\u001b[90m   | \\u001b[39m\\u001b[1m\\u001b[31m^\\u001b[39m\\u001b[22m\\n \\u001b[90m 2 | \\u001b[39mimport \\u001b[32m'../css/b.css'\\u001b[39m\\u001b[33m;\\u001b[39m\\n\");\n\n//# sourceURL=webpack:///./src/js/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_a_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/a.css */ \"./src/css/a.css\");\n/* harmony import */ var _css_b_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../css/b.css */ \"./src/css/b.css\");\n\n\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ })
 
