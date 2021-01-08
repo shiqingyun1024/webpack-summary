@@ -171,4 +171,26 @@ optimize-css-assets-webpack-plugin<br>
 // 压缩css<br>
 new OptimizeCssAssetsWebpackPlugin()<br>
 
+#### 12.js的语法检查
+语法检查：eslint-loader eslint库<br>
+注意：只检查自己写的源代码，第三方的库是不用检查的<br>
+设置检查规则：<br>
+在package.json中eslintConfig中设置<br>
+"eslintConfig":{<br>
+"extends":"airbnb-base"<br>
+}<br>
+airbnb --> 需要三个库 eslint-config-airbnb-base eslint eslint-plugin-import.<br>
+所以要安装：eslint-loader eslint-config-airbnb-base eslint eslint-plugin-import<br>
+*/ <br>
+{
+test:/\.js$/,<br>
+// 排除第三方的检查<br>
+exclude:/node_modules/,<br>
+loader:'eslint-loader',<br>
+  options:{<br>
+  // 自动修复eslint的错误<br>
+    fix:true<br>
+  }<br>
+}<br>
+
 
