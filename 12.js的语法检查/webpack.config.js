@@ -28,9 +28,12 @@ module.exports = {
            {
                test:/\.js$/,
                // 排除第三方的检查
-               excludes:/node_modules/,
+               exclude:/node_modules/,
                loader:'eslint-loader',
-               options:{}
+               options:{
+                //  自动修复eslint的错误
+                  fix:true
+               }
            }
 
         ]
