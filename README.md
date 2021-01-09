@@ -193,4 +193,44 @@ loader:'eslint-loader',<br>
   }<br>
 }<br>
 
+#### 13.js的兼容性处理
+babel-loader，这个是经常能用到的。<br>
+
+  js的兼容性处理-- babel-loader @babel/core @babel/preset-env,然后下面是三种解决兼容性的方案，分别下载不同的包<br>
+  1、基本的js兼容性处理 ---> @babel/preset-env<br>
+     问题：只能转换基本语法，如prmise不能转换<br>
+  2、全部js兼容性处理 --> @babel/polyfill<br>
+     问题：我只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了~<br>
+  3、需要做兼容性的就做：按需加载。 --> core-js<br>
+ {<br>
+                <br>test:/\.js$/,
+                <br>exclude:/node_modules/,
+                <br>loader:'babel-loader',
+                <br>options:{
+                    <br>// 预设：指示babel做怎样的兼容性处理。
+                    <br>presets:[
+                        <br>[
+                            <br>'@babel/preset-env',
+                            <br>{
+                                <br>// 按需加载
+                                <br>useBuiltIns:'usage',
+                                <br>// 指定core-js版本
+                                <br>corejs:{
+                                    <br>version:3
+                                <br>},
+                                <br>// 指定兼容性做到哪个版本浏览器
+                                <br>targets:{
+                                    <br>chrome:'60',
+                                    <br>firefox:'60',
+                                    <br>ie:'9',
+                                    <br>safari:'10',
+                                    <br>edge:'17'
+                                <br>}
+                            <br>}
+                        <br>]
+                    <br>]
+                <br>}
+
+            
+
 
