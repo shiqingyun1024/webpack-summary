@@ -7,7 +7,7 @@ module.exports = {
     // 入口文件
     entry:'./src/js/index.js',
     // 出口文件
-    outpath:{
+    output:{
         filename:'js/built.js',
         path: resolve(__dirname,'build')
     },
@@ -20,8 +20,19 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader'
                 ]
+            },
+            /*
+              js的兼容性处理-- babel-loader @babel/preset-env   需要安装这两个
+            */ 
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                options:{
+                    // 预设：指示babel做怎样的兼容性处理。
+                    presets:['@babel/preset-env']
+                }
             }
-
         ]
     },
     // plugins插件的配置
