@@ -17,7 +17,7 @@ module.exports = {
         ]
     },
     // plugins插件的配置
-    plugin:[
+    plugins:[
         new HtmlWebpackPlugin({
             template:'./src/index.html'
         }),
