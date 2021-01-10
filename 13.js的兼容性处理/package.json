@@ -13,6 +13,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "babel-laoder": "0.0.1-security",
+    "core-js": "^3.8.2",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },

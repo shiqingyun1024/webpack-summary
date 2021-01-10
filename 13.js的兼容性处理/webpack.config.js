@@ -24,10 +24,12 @@ module.exports = {
             /*
               js的兼容性处理-- babel-loader @babel/core @babel/preset-env,然后下面是三种解决兼容性的方案，分别下载不同的包
               1、基本的js兼容性处理 ---> @babel/preset-env
-                 问题：只能转换基本语法，如prmise不能转换
-              2、全部js兼容性处理 --> @babel/polyfill
+                 问题：只能转换基本语法，如prmise等高级语法不能转换
+              2、全部js兼容性处理 --> @babel/polyfill，直接引入即可，不需要配置 ====因为体积太大了，所以实际开发时用的很少。
                  问题：我只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了~
               3、需要做兼容性的就做：按需加载。 --> core-js
+
+              最终的做法是结合1、3这两步，1是处理基本语法，3是处理高级语法。
             */ 
             {
                 test:/\.js$/,
@@ -40,7 +42,7 @@ module.exports = {
                             '@babel/preset-env',
                             {
                                 // 按需加载
-                                useBuiltIns:'usage',
+                                useBuiltIns:'usage',//指定按需加载
                                 // 指定core-js版本
                                 corejs:{
                                     version:3

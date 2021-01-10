@@ -1,4 +1,4 @@
-import '@babel/polyfill'; // 如果用polyfill的话，就直接引入。全部做兼容性处理，代码体积会很大。
+// import '@babel/polyfill'; // 如果用polyfill的话，就直接引入。全部做兼容性处理，代码体积会很大。
 const add = (x,y)=>{
     return x+y;
 }
