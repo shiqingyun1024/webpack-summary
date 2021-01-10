@@ -238,3 +238,13 @@ babel-loader，这个是经常能用到的。<br>
 mode:'production'<br>
 
 #### 15.html的压缩
+new HtmlWebpackPlugin({<br>
+    template:'./src/index.html',<br>
+    // 压缩html代码的设置<br>
+    minify:{<br>
+      // 移除空格<br>
+      collapseWhitespace:true,<br>
+      // 移除注释<br>
+      removeComments:true<br>
+    }<br>
+})<br>
