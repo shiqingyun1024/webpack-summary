@@ -11,8 +11,27 @@
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^4.5.1",
+    "less": "^4.1.0",
+    "less-loader": "^7.2.1",
     "mini-css-extract-plugin": "^1.3.3",
+    "postcss-loader": "^4.1.0",
+    "postcss-preset-env": "^6.7.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "dependencies": {
+    "optimize-css-assets-webpack-plugin": "^5.0.4"
   }
 }
