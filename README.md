@@ -231,6 +231,10 @@ babel-loader，这个是经常能用到的。<br>
                     <br>]
                 <br>}
 
-            
 
 
+#### 14.js的压缩
+// 生产环境下会自动压缩js代码<br>
+mode:'production'<br>
+
+#### 15.html的压缩
