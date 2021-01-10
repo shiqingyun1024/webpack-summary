@@ -19,7 +19,14 @@ module.exports = {
     // plugins插件的配置
     plugins:[
         new HtmlWebpackPlugin({
-            template:'./src/index.html'
+            template:'./src/index.html',
+            // 压缩html代码的设置
+            minify:{
+                // 移除空格
+                collapseWhitespace:true,
+                // 移除注释
+                removeComments:true
+            }
         }),
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns:['build']
