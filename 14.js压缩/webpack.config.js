@@ -25,6 +25,6 @@ module.exports = {
             cleanAfterEveryBuildPatterns:['build']
         })
     ],
-    // 模式
-    mode:'development'
+    // 生产环境下会自动压缩js代码
+    mode:'production'
 }
