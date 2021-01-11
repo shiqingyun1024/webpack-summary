@@ -45,9 +45,14 @@ module.exports = {
             },
             // js的语法检查，eslint-loader
             {
+                // 需要在package.json中的eslintConfig进行配置 -->airbnb规则
                 test:/\.js$/,
                 exclude:/node_modules/,
-                loader:'eslint-loader'
+                loader:'eslint-loader',
+                options:{
+                    //  自动修复eslint的错误
+                      fix:true
+                }
             }
         ]
     },

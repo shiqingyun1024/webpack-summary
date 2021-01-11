@@ -10,6 +10,10 @@
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.22.1",
     "html-webpack-plugin": "^4.5.1",
     "less": "^4.1.0",
     "less-loader": "^7.2.1",
@@ -33,5 +37,8 @@
   },
   "dependencies": {
     "optimize-css-assets-webpack-plugin": "^5.0.4"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base"
   }
 }
