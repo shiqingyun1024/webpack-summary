@@ -48,13 +48,16 @@ module.exports = {
               正常来讲，一个文件只能被一个loader处理。
               当一个文件要被多个loader处理，那么一定要指定loader执行的先后顺序
               先执行eslint，再执行babel，因为babel是把es6转化为es5,转化之后再做eslint检查就没有意义了，先做eslint检查，就可以立马改正。
-            */ 
+              enforce:'pre'  用这个配置代表优先执行
+              */ 
 
             // js的语法检查，eslint-loader
             {
                 // 需要在package.json中的eslintConfig进行配置 -->airbnb规则
                 test:/\.js$/,
                 exclude:/node_modules/,
+                // 优先执行
+                enforce:'pre',
                 loader:'eslint-loader',
                 options:{
                     //  自动修复eslint的错误
