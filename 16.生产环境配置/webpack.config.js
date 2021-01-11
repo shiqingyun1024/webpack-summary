@@ -53,6 +53,40 @@ module.exports = {
                     //  自动修复eslint的错误
                       fix:true
                 }
+            },
+            // js的兼容性处理  babel-loader @babel/core @babel/preset-env
+            // 需要做兼容性的就做：按需加载。 --> core-js
+            {
+                // 需要在package.json中的eslintConfig进行配置 -->airbnb规则
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'babel-loader',
+                options:{
+                    // 预设：指示babel做怎样的兼容性处理。
+                    presets:[
+                        [
+                            '@babel/preset-env',
+                            {
+                                // 按需加载
+                                useBuiltIns:'usage',//指定按需加载
+                                // 指定core-js版本
+                                corejs:{
+                                    version:3
+                                },
+                                // 指定兼容性做到哪个版本浏览器
+                                targets:{
+                                    chrome:'60',
+                                    firefox:'60',
+                                    ie:'9',
+                                    safari:'10',
+                                    edge:'17'
+
+                                }
+                            }
+
+                        ]
+                    ]
+                }
             }
         ]
     },
