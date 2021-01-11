@@ -42,6 +42,12 @@ module.exports = {
                     // less-loader把less文件转化css文件
                     'less-loader'
                 ]
+            },
+            // js的语法检查，eslint-loader
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:'eslint-loader'
             }
         ]
     },
