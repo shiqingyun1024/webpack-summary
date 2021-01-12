@@ -135,7 +135,8 @@ module.exports = {
                 exclude:/\.(js|css|less|html|jpg|png|gif)$/,
                 loader:'file-loader',
                 options:{
-                    outputPath:'media'
+                    outputPath:'media',
+                    name:'[hash:8].[ext]'
                 }
             }
         ]
@@ -163,6 +164,6 @@ module.exports = {
         new OptimizeCssAssetsWebpackPlugin(),
 
     ],
-    // 模式
+    // 模式,生产模式会自动压缩js代码
     mode: 'production'
 }
