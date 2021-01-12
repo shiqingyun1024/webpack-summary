@@ -128,6 +128,15 @@ module.exports = {
                 test: /\.html$/,
                 // 处理html文件中的img图片，负责引入img，从而能被url-loader进行处理。
                 loader: 'html-loader'
+            },
+
+            // 处理其他资源
+            {
+                exclude:/\.(js|css|less|html|jpg|png|gif)$/,
+                loader:'file-loader',
+                options:{
+                    outputPath:'media'
+                }
             }
         ]
     },
