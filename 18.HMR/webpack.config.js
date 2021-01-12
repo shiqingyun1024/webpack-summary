@@ -1,1 +1,1 @@
-// webpack是基于node的
+// webpack是基于node的，所以遵循commonjs规范
