@@ -16,7 +16,7 @@ module.exports = {
                test:/\.css$/,
                use:['style-loader','css-loader']
             },
-            // 使用file-loader来进行处理iconfont图标
+            // 使用file-loader来进行处理iconfont图标,会原封不动的进行输出
             // 打包其他资源（除了html/js/css资源以外的资源）
            {
             //  排除css/js/html资源

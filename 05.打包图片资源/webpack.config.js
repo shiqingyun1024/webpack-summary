@@ -41,7 +41,9 @@ module.exports = {
                     // 给图片进行重命名
                     // [hash:8]取图片的hash的前8位
                     // [ext]取文件原来的扩展名
-                    name:'[hash:8].[ext]'
+                    name:'[hash:8].[ext]',
+                    // 输出到build下面的imgs文件夹中
+                    outputPath:'imgs'
                 },
             },
 
