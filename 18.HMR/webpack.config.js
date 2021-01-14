@@ -29,6 +29,14 @@ module.exports = {
                    //  把css转化js  
                    'css-loader'
                ]
+            },
+            {
+                test:/\.(jpg|png|gif)$/,
+                loader:'url-loader'
+            },
+            {
+                test:/\.html$/,
+                loader:'html-loader'
             }
         ]
     },
