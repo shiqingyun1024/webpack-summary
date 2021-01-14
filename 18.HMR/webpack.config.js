@@ -23,15 +23,16 @@ module.exports = {
     module: {
         rules: [
             {
-               test:/\.css$/,
+               test:/\.less$/,
                use:[
                    'style-loader',
                    //  把css转化js  
-                   'css-loader'
+                   'css-loader',
+                   'less-loader'
                ]
             },
             {
-                test:/\.(jpg|png|gif)$/,
+                test:/\.(jpg|png|gif|jpeg)$/,
                 loader:'url-loader'
             },
             {
