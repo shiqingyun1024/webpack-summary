@@ -1,0 +1,33 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1608994006061'); /* IE9 */
+  src: url('iconfont.eot?t=1608994006061#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAP0AAsAAAAACHgAAAOlAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDKgqEDINAATYCJAMUCwwABCAFhG0HXBtYB8gekiSBKAUUUKCAFDJBPHy/H+3cJ39FJImm9ebT1xPqkeSRpJWSIdIJmewl7KRNla3wQ5D0SUrIW0jwgKdXkWnz1CkEUzsCjfXqUq7/n2Oma+H8a5tLNUVTRNNGewMcJdCAoksntBPGG8auvIjtBNpNGyxyOHfxapCmMPoF4ompN4C0lEqpSQytQlMytYgPoGpN76JNgPf+38d/sBppJDUzhh7dm0PA9F/kuwd3JXa54iKAYDwD2CwyVgCFeFRqugOG3hVQuxKeZBvQarZK/KLfne9eIoFwRLgXb6t27fAfXpIVomHEd4Jd5Cv8IjaL4BdlkfjlsMj88oQvJbuCdpj/C35g7IwxZLzEpCyPlaKkrK0yfPvkyCOQOh38rseSkvBHn0ZgF6eo+daurtXd3Wt6e9f19GyypGsDbpJT0Kn2wpG81ecuPb5fuK6pqxCuOV/oua4UbGUFxYZzeYQSjhbqSedpIsl3z0sX225V37WVRa+3j5FA+yyGfOXi6K0yMqLjW2clvNFhhCfc3vWoRn3wJALfPu2Xef8x2Di+NWaMqpVoqleZU5KjppoAlMd8hvE4/GxyXK4jjlOku32vw44OCCXXMReK8XKHplwsuvj+yeG06IeLOzcWKFpJtlwQDH90Sq0pPgi247m1esMKeX+V94XDabnFF0drR+XsEk05Olx7JMVGFYHRn6Uz7U3KC6Wp/Ve4SMkpyY6tjWWX5CiLwl9ls9Z+mR5OX+3kHkJn0KHcbb4ZbGK0zM+jceBS/grHwvTwGJQhrZR+dTd7z9ov1WVO/t8qXWfZT+VpD7ZcKvoJ/pegteDHCloWFFVkqGuRc22+3LtaB0HiP4p+aJB+38ZRDrV2E1pTAgZJiynIWs0gC3YFqg7r0Gi1A+2WzZvdYQAHRWnDkv0AQq+XkHT7DlmvZmTBfoVq2D9o9AaEdheRu2SHuTAzZnHaIChBjZuRiX2PWVqRESSupPp6p4EnRT5+LeWh6UAjhg7PBuZRj/IxRoQb9JFCMMS476K5YDfqOD4KuG9RLIYaQgQThw1jZR8ain0XZDjAUQ0EikAabYaYMJ+HuaWFjNzvV6J06zka8Jq8CvtaFBcyG0dGGGp4C+Q8udcq71puCW2gG0kQGIThfC5kLuhEORw+JCjvZKEwYSijhzsw0TCzGGsrHzq/0n3GddDOeEKNFDlK1Gjkm4RkNnDubxyyPhiCTY4dKhOPe8Lcq+HmDRJ1YgT3mDgEAAAAAA==') format('woff2'),
+  url('iconfont.woff?t=1608994006061') format('woff'),
+  url('iconfont.ttf?t=1608994006061') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1608994006061#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-add:before {
+  content: "\e664";
+}
+
+.icon-arrow-up-circle:before {
+  content: "\e665";
+}
+
+.icon-direction-up:before {
+  content: "\e66c";
+}
+
+.icon-electronics:before {
+  content: "\e66e";
+}
+
