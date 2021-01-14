@@ -37,6 +37,17 @@ module.exports = {
             {
                 test:/\.html$/,
                 loader:'html-loader'
+            },
+            // 其他资源,字体图标等
+            {
+                // 排除
+                exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[hash:8].[ext]',
+                    // 指定输出的文件夹名
+                    outputPath:'media'
+                }
             }
         ]
     },
