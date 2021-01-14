@@ -6,6 +6,7 @@
   样式文件：可以使用HMR功能：因为style-loader内部实现了~
   js文件：默认不能使用HMR功能
   html文件：默认不能使用HMR功能，同时会导致问题：html文件不能热更新了~
+      解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
 */ 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -13,7 +14,7 @@ const { resolve } = require("path");
 // webpack是基于node的，所以遵循commonjs规范
 module.exports = {
     // 入口文件
-    entry: './src/js/index.js',
+    entry: ['./src/js/index.js','./src/index.html'],
     // 出口文件
     output: {
         filename: 'js/built.js',
