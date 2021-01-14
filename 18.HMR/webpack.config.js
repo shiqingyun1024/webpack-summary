@@ -23,6 +23,14 @@ module.exports = {
     module: {
         rules: [
             {
+                test:/\.css$/,
+                use:[
+                    'style-loader',
+                    //  把css转化js  
+                    'css-loader'
+                ]
+             },
+            {
                test:/\.less$/,
                use:[
                    'style-loader',
