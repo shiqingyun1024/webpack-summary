@@ -5,8 +5,8 @@
 
   样式文件：可以使用HMR功能：因为style-loader内部实现了~
   js文件：默认不能使用HMR功能
-  html文件：默认不能使用HMR功能，同时会导致问题：html文件不能热更新了~
-      解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
+  html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
+      html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
 */ 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
