@@ -15,6 +15,7 @@ module.exports = {
     module:{
         rules:[
             {
+                // 处理css文件
                 test:/\.css$/,
                 use:[
                     // style-loader含有热更新功能，所以css改变之后会自动热更新。
@@ -23,7 +24,17 @@ module.exports = {
                 ]
             },
             {
-                
+                // 处理图片资源
+                test:/\.(png|jpeg|jpg|gif)$/,
+                loader:'url-loader'
+            },
+            {
+                // 处理html中的图片
+                test:/\.html$/,
+                loader:'html-loader'
+            },
+            {
+                // 处理其他资源
             }
 
         ]
