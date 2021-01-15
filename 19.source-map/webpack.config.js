@@ -1,6 +1,8 @@
 /*
 source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
 */ 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('html-webpack-plugin');
 const {resolve} = require('path');
 // webpack是基于node配置的，所以遵循commonjs规范
 module.exports = {
@@ -35,6 +37,7 @@ module.exports = {
             },
             {
                 // 处理其他资源
+                exculde:/\.(html|css|png|jpeg|jpg|gif)/
             }
 
         ]
