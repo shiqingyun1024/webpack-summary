@@ -2,6 +2,8 @@
 source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
 */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// 拷贝文件到打包后的路径
+const CopyWebpackPlugin = require('clean-webpack-plugin');
 const { CleanWebpackPlugin } = require('html-webpack-plugin');
 const { resolve } = require('path');
 // webpack是基于node配置的，所以遵循commonjs规范

@@ -17,5 +17,8 @@
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
     "style-loader": "^2.0.0"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^7.0.0"
   }
 }
