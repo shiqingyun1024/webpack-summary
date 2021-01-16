@@ -36,8 +36,12 @@ module.exports = {
                 loader: 'html-loader'
             },
             {
-                // 处理其他资源
-                exculde: /\.(html|css|png|jpeg|jpg|gif)/
+                // 处理其他资源,排除下面这几个
+                exculde: /\.(html|js|css|png|jpeg|jpg|gif)$/,
+                loader: 'file-loader',
+                options:{
+                    name:'[hash:8].[ext]'
+                }
             }
 
         ]
