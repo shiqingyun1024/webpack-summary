@@ -4,7 +4,7 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 拷贝文件到打包后的路径
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { resolve } = require('path');
 // webpack是基于node配置的，所以遵循commonjs规范
 module.exports = {
@@ -39,10 +39,10 @@ module.exports = {
             },
             {
                 // 处理其他资源,排除下面这几个
-                exculde: /\.(html|js|css|png|jpeg|jpg|gif)$/,
+                exclude: /\.(html|js|css|png|jpeg|jpg|gif)$/,
                 loader: 'file-loader',
-                options:{
-                    name:'[hash:8].[ext]'
+                options: {
+                    name: '[hash:8].[ext]'
                 }
             }
 
@@ -57,8 +57,11 @@ module.exports = {
             cleanAfterEveryBuildPatterns: ['build']
         }),
         new CopyWebpackPlugin({
-            from:'./src/media',
-            to:'media'
+            patterns: [{
+                from: resolve(__dirname, './src/media'),
+                to: 'media'
+            }
+            ]
         })
 
     ],
