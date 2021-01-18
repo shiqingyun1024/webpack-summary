@@ -56,14 +56,15 @@ module.exports = {
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ['build']
         }),
-        new CopyWebpackPlugin({
-            patterns: [{
-            // [{
-                from: resolve(__dirname, './src/media'),
-                to: 'media'
+        new CopyWebpackPlugin(
+            // patterns: [{
+            [{
+                from: resolve(__dirname, './media'),
+                to: 'media',
+                ignore: ['.*']
             }
             ]
-        })
+        )
 
     ],
     // 模式
