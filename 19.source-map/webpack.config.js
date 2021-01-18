@@ -1,6 +1,3 @@
-/*
-source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
-*/
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 // 拷贝文件到打包后的路径
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -84,3 +81,7 @@ module.exports = {
     },
     devtool:'source-map'
 }
+/*
+  source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
+  [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
+*/

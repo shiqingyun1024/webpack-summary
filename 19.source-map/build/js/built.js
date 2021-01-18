@@ -93,8 +93,13 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("// import ''\nfunction add(x,y){\n   return x+y\n}\nconsole.log(add(1,2))\n\n//# sourceURL=webpack:///./src/js/index.js?");
+// import ''
+function add(x,y){
+   return x+y
+}
+console.log(add(1,2))
 
 /***/ })
 
 /******/ });
+//# sourceMappingURL=built.js.map
