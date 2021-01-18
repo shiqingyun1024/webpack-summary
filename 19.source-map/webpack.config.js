@@ -58,6 +58,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin({
             patterns: [{
+            // [{
                 from: resolve(__dirname, './src/media'),
                 to: 'media'
             }
