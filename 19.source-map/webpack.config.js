@@ -79,15 +79,18 @@ module.exports = {
         // 开启HMR功能
         hot: true
     },
-    devtool:'inline-source-map'
+    devtool:'source-map'
 }
 /*
   source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
   [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
 
-  inline-source-map: 内联
+  source-map: 外部
+  inline-source-map: 内联 只生成一个内联source-map
   hidden-source-map: 外部
-  eval-source-map: 内联
-
+  eval-source-map: 内联  每一个文件都生成对应的source-map，都在eval函数中
+  nosources-source-map: 外部
+  cheap-source-map: 外部
+  cheap-module-source-map: 外部
   内联和外部的区别：1、外部生成了文件，内联没有  2、内联构建速度更快
 */
