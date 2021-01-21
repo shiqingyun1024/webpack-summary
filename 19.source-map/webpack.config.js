@@ -79,7 +79,7 @@ module.exports = {
         // 开启HMR功能
         hot: true
     },
-    devtool:'inline-source-map'
+    devtool:'eval-source-map'
 }
 /*
   source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
@@ -119,5 +119,11 @@ module.exports = {
    ---> 得出结论：eval-source-map（封装的脚手架中都采用的这种如：vue-cli）
    
   生产环境：源代码要不要隐藏？调试要不要更友好
-  
+     内联会让代码体积变大，所以在生产环境不用内联
+     隐藏源代码：hidden-source-map（只隐藏源代码，会提示构建后代码错误信息）和nosources-source-map（全部隐藏）
+     
+     调试友好的话：source-map
+
+     --->结论：source-map
+
 */
