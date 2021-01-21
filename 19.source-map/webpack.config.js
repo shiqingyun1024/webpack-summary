@@ -79,18 +79,19 @@ module.exports = {
         // 开启HMR功能
         hot: true
     },
-    devtool:'source-map'
+    devtool:'inline-source-map'
 }
 /*
   source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
   [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
 
   source-map: 外部
-  inline-source-map: 内联 只生成一个内联source-map
+      错误代码的准确信息 和 源代码的错误位置
+  inline-source-map: 内联 只生成一个内联source-map 错误代码的准确信息 和 源代码的错误位置
   hidden-source-map: 外部
   eval-source-map: 内联  每一个文件都生成对应的source-map，都在eval函数中
   nosources-source-map: 外部
   cheap-source-map: 外部
   cheap-module-source-map: 外部
-  内联和外部的区别：1、外部生成了文件，内联没有  2、内联构建速度更快
+  内联和外部的区别：1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  2、内联构建速度更快
 */
