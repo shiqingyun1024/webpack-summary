@@ -104,5 +104,19 @@ module.exports = {
   cheap-module-source-map: 外部
         错误代码的准确信息 和 源代码的错误位置
         只能精确到行，不知道这一行哪块出错了，其他的可以。
+        module会将loader的source map也加进来。
   内联和外部的区别：1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  2、内联构建速度更快
+  
+  开发环境：速度快，调试更友好
+  速度快(eval>inline>cheap>....)
+    eval-cheap-source-map
+    eval-source-map
+  调试更友好
+    source-map
+    cheap-module-source-map
+    cheap-source-map
+
+   ---> 得出结论：eval-source-map（封装的脚手架中都采用的这种如：vue-cli）
+   
+  生产环境：源代码要不要隐藏？调试要不要更友好
 */
