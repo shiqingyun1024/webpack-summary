@@ -87,11 +87,22 @@ module.exports = {
 
   source-map: 外部
       错误代码的准确信息 和 源代码的错误位置
-  inline-source-map: 内联 只生成一个内联source-map 错误代码的准确信息 和 源代码的错误位置
+  inline-source-map: 内联 
+      只生成一个内联source-map 
+      错误代码的准确信息 和 源代码的错误位置
   hidden-source-map: 外部
-  eval-source-map: 内联  每一个文件都生成对应的source-map，都在eval函数中
+      错误代码的错误原因，但是没有错误位置
+      不能追踪源文件错误，只能提示到构建后代码的错误位置。（为了隐藏源代码）
+  eval-source-map: 内联  
+      每一个文件都生成对应的source-map，都在eval函数中
+      错误代码的准确信息 和 源代码的错误位置
   nosources-source-map: 外部
+      错误代码的准确信息，但是没有任何源代码信息（为了隐藏源代码）
   cheap-source-map: 外部
+       错误代码的准确信息 和 源代码的错误位置
+       只能精确到行，不知道这一行哪块出错了，其他的可以。
   cheap-module-source-map: 外部
+        错误代码的准确信息 和 源代码的错误位置
+        只能精确到行，不知道这一行哪块出错了，其他的可以。
   内联和外部的区别：1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  2、内联构建速度更快
 */

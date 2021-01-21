@@ -1,5 +1,5 @@
 function add(){
-    console.log(x)
+    console.log('1223');console.log(x)
 }
 export default add
 
