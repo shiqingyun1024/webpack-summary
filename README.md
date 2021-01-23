@@ -272,3 +272,54 @@ HMR: hot module replacement 热模块替换/模块热替换
       <br>注意：HMR功能对js的处理，只能处理非入口js文件的其他文件。因<br>为入口js文件会把其他的js文件引入进来，一旦发生改变，会重新引入，重新进行加载。
   <br>html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能<br>自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
       <br>html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
+
+##### 19.source-map
+
+source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
+  [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
+
+  source-map: 外部
+      错误代码的准确信息 和 源代码的错误位置
+  inline-source-map: 内联 
+      只生成一个内联source-map 
+      错误代码的准确信息 和 源代码的错误位置
+  hidden-source-map: 外部
+      错误代码的错误原因，但是没有错误位置
+      不能追踪源文件错误，只能提示到构建后代码的错误位置。（为了隐藏源代码）
+  eval-source-map: 内联  
+      每一个文件都生成对应的source-map，都在eval函数中
+      错误代码的准确信息 和 源代码的错误位置
+  nosources-source-map: 外部
+      错误代码的准确信息，但是没有任何源代码信息（为了隐藏源代码）
+  cheap-source-map: 外部
+       错误代码的准确信息 和 源代码的错误位置
+       只能精确到行，不知道这一行哪块出错了，其他的可以。
+  cheap-module-source-map: 外部
+        错误代码的准确信息 和 源代码的错误位置
+        只能精确到行，不知道这一行哪块出错了，其他的可以。
+        module会将loader的source map也加进来。
+  内联和外部的区别：1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  2、内联构建速度更快
+  
+  开发环境：速度快，调试更友好
+  速度快(eval>inline>cheap>....)
+    eval-cheap-source-map
+    eval-source-map
+  调试更友好
+    source-map
+    cheap-module-source-map
+    cheap-source-map
+
+   ---> 得出结论：eval-source-map（封装的脚手架中都采用的这种如：vue-cli）
+   
+  生产环境：源代码要不要隐藏？调试要不要更友好
+     内联会让代码体积变大，所以在生产环境不用内联
+     隐藏源代码：hidden-source-map（只隐藏源代码，会提示构建后代码错误信息）和nosources-source-map（全部隐藏）
+     
+     调试友好的话：source-map
+
+     --->结论：source-map
+
+##### 20.oneOf
+ oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
+                以下loader只会匹配一个
+                 注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
