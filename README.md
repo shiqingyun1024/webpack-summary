@@ -268,7 +268,7 @@ HMR: hot module replacement 热模块替换/模块热替换
   <br>极大的提高了构建速度
 
   <br>样式文件：可以使用HMR功能：因为style-loader内部实现了~
-  <br>js文件：默认不能使用HMR功能 --->需要修改js代码，添加支持HMR功能<br>的代码（module.hot.accept）
+  <br>js文件：默认不能使用HMR功能 --->需要修改js代码，添加支持HMR功能的代码（module.hot.accept）
       <br>注意：HMR功能对js的处理，只能处理非入口js文件的其他文件。因<br>为入口js文件会把其他的js文件引入进来，一旦发生改变，会重新引入，重新进行加载。
-  <br>html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能<br>自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改<br>变了，每次都会重新打包）
-      <br>html文件改变不能自动刷新页面解决：修改entry入口，将html文<br>件引入。将entry改成一个数组的形式，如下entry
+  <br>html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能<br>自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
+      <br>html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
