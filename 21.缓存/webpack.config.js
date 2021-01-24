@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // 压缩css
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+// 拷贝文件
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 // 定义nodejs的环境变量:决定使用package.json中的browserslist的生产环境还是测试环境
 process.env.NODE_ENV = 'production';
 
@@ -56,7 +58,7 @@ module.exports = {
                     // 图片大小小于8kb，就会被base64处理（一般都处理8~12kb及以下的图片）
                     // 优点：减少请求数量（减轻服务器压力）
                     // 缺点：图片体积会更大（文件请求速度更慢）
-                    limit: 10 * 1024,
+                    limit: 8 * 1024,
                     // 问题：因为url-loader默认使用es6模块化解析，而html-loader引入图片是commonjs
                     // 解析时会出现问题，[object Module]
                     // 解决：关闭url-loader的es6模块化，使用commonjs解析
@@ -111,16 +113,12 @@ module.exports = {
             },
             // 处理其他资源
             {
-                exclude: /\.(js|css|less|html|jpg|png|gif)$/,
+                exclude: /\.(js|css|less|html|jpg|png|gif|jpeg)$/,
                 loader: 'file-loader',
                 options: {
                     outputPath: 'media',
                     name: '[hash:8].[ext]'
                 }
-            },
-            // 处理js的兼容性
-            {
-
             }
         ]
     },
@@ -146,7 +144,16 @@ module.exports = {
             filename: 'css/built.css'
         }),
         // 压缩css文件
-        new OptimizeCssAssetsWebpackPlugin()
+        new OptimizeCssAssetsWebpackPlugin(),
+        // 拷贝文件
+        new CopyWebpackPlugin(
+            // patterns: [{
+            [{
+                from: resolve(__dirname, './doc'),
+                to: 'doc',
+                ignore: ['.*']
+            }]
+        )
     ],
     // 模式
     mode: 'production',
