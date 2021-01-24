@@ -68,7 +68,8 @@ module.exports = {
                     // [ext]取文件原来的扩展名
                     name: '[hash:8].[ext]',
                     // 输出到build下面的imgs文件夹中
-                    outputPath: 'imgs'
+                    outputPath: 'imgs',
+                    publicPath: '/build/imgs/'
                 }
             },
             // js的兼容性处理  babel-loader @babel/core @babel/preset-env
