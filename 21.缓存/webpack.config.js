@@ -69,6 +69,7 @@ module.exports = {
                     name: '[hash:8].[ext]',
                     // 输出到build下面的imgs文件夹中
                     outputPath: 'imgs',
+                    // pubilc代表是绝对路径，这样css和html加载的时候都是绝对路径，src的值就是publicPath+name
                     publicPath: '/build/imgs/'
                 }
             },
@@ -103,7 +104,10 @@ module.exports = {
                             }
 
                         ]
-                    ]
+                    ],
+                    // 开启babel缓存 ===== 为什么要开启缓存，因为假如这个项目中有100个js文件，但是我只改其中一个，这个时候另外99个文件就不需要重新打包了，直接使用缓存即可，这样打包构建速度更快更好。
+                    // 第二次构建时，会读取之前的缓存。
+                    cacheDirectory:true
                 }
             },
             // 处理html中的图片资源
