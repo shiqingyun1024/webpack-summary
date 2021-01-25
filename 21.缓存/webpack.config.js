@@ -7,6 +7,21 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 // 拷贝文件
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+/*
+缓存：
+    babel缓存
+       cacheDirectory:true
+    文件资源缓存
+       hash：每次webpack构建时会生成一个唯一的hash值.
+           问题：因为js和css同时使用一个hash值。
+             如果重新打包，会导致所有缓存失效。（可能我却只改动一个文件）
+       chunkhash: 根据chunk生成的hash值。如果打包来源于同一个chunk，那么hash就一样。
+           问题：js和css的hash值还是一样的
+              因为css是在js中被引入的，所以同属于一个chunk
+*/ 
+
+
 // 定义nodejs的环境变量:决定使用package.json中的browserslist的生产环境还是测试环境
 process.env.NODE_ENV = 'production';
 
@@ -146,7 +161,7 @@ module.exports = {
         }),
         // 指定抽离的文件名和路径
         new MiniCssExtractPlugin({
-            filename: 'css/built.css'
+            filename: 'css/built.[contenthash:8].css'
         }),
         // 压缩css文件
         new OptimizeCssAssetsWebpackPlugin(),
