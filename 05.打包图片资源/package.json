@@ -19,5 +19,8 @@
     "url-loader": "^4.1.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "http-server": "^0.12.3"
   }
 }

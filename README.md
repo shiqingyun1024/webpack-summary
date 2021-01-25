@@ -275,51 +275,66 @@ HMR: hot module replacement 热模块替换/模块热替换
 
 ##### 19.source-map
 
-source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
-  [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
+source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因<br>
+  [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map<br>
 
-  source-map: 外部
-      错误代码的准确信息 和 源代码的错误位置
-  inline-source-map: 内联 
-      只生成一个内联source-map 
-      错误代码的准确信息 和 源代码的错误位置
-  hidden-source-map: 外部
-      错误代码的错误原因，但是没有错误位置
-      不能追踪源文件错误，只能提示到构建后代码的错误位置。（为了隐藏源代码）
-  eval-source-map: 内联  
-      每一个文件都生成对应的source-map，都在eval函数中
-      错误代码的准确信息 和 源代码的错误位置
-  nosources-source-map: 外部
-      错误代码的准确信息，但是没有任何源代码信息（为了隐藏源代码）
-  cheap-source-map: 外部
-       错误代码的准确信息 和 源代码的错误位置
-       只能精确到行，不知道这一行哪块出错了，其他的可以。
-  cheap-module-source-map: 外部
-        错误代码的准确信息 和 源代码的错误位置
-        只能精确到行，不知道这一行哪块出错了，其他的可以。
-        module会将loader的source map也加进来。
-  内联和外部的区别：1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  2、内联构建速度更快
+  source-map: 外部<br>
+      错误代码的准确信息 和 源代码的错误位置<br>
+  inline-source-map: 内联 <br>
+      只生成一个内联source-map <br>
+      错误代码的准确信息 和 源代码的错误位置<br>
+  hidden-source-map: 外部<br>
+      错误代码的错误原因，但是没有错误位置<br>
+      不能追踪源文件错误，只能提示到构建后代码的错误位置。（为了隐藏源代码）<br>
+  eval-source-map: 内联  <br>
+      每一个文件都生成对应的source-map，都在eval函数中<br>
+      错误代码的准确信息 和 源代码的错误位置<br>
+  nosources-source-map: 外部<br>
+      错误代码的准确信息，但是没有任何源代码信息（为了隐藏源代码）<br>
+  cheap-source-map: 外部<br>
+       错误代码的准确信息 和 源代码的错误位置<br>
+       只能精确到行，不知道这一行哪块出错了，其他的可以。<br>
+  cheap-module-source-map: 外部<br>
+        错误代码的准确信息 和 源代码的错误位置<br>
+        只能精确到行，不知道这一行哪块出错了，其他的可以。<br>
+        module会将loader的source map也加进来。<br>
+  <br>内联和外部的区别：<br>1、外部生成了文件(如build.map.js)，内联没有(内联是把相关的映射代码加到了built.js里面)  <br>2、内联构建速度更快
   
-  开发环境：速度快，调试更友好
-  速度快(eval>inline>cheap>....)
-    eval-cheap-source-map
-    eval-source-map
-  调试更友好
-    source-map
-    cheap-module-source-map
-    cheap-source-map
+  <br>开发环境：速度快，调试更友好
+  <br>速度快(eval>inline>cheap>....)
+    <br>eval-cheap-source-map
+    <br>eval-source-map
+  <br>调试更友好
+    <br>source-map
+    <br>cheap-module-source-map
+    <br>cheap-source-map
 
-   ---> 得出结论：eval-source-map（封装的脚手架中都采用的这种如：vue-cli）
+   <br>---> 得出结论：eval-source-map（封装的脚手架中都采用的这种如：vue-cli）
    
-  生产环境：源代码要不要隐藏？调试要不要更友好
-     内联会让代码体积变大，所以在生产环境不用内联
-     隐藏源代码：hidden-source-map（只隐藏源代码，会提示构建后代码错误信息）和nosources-source-map（全部隐藏）
+  <br>生产环境：源代码要不要隐藏？调试要不要更友好
+     <br>内联会让代码体积变大，所以在生产环境不用内联
+     <br>隐藏源代码：hidden-source-map（只隐藏源代码，会提示构建后代码错误信息）和nosources-source-map（全部隐藏）
      
      调试友好的话：source-map
 
-     --->结论：source-map
+     <br> --->结论：source-map
 
 ##### 20.oneOf
- oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
-                以下loader只会匹配一个
-                 注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
+ <br>oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
+                <br>以下loader只会匹配一个
+                 <br>注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
+
+##### 21.缓存
+缓存：
+    <br>babel缓存
+       <br>cacheDirectory:true
+       <br>--> 让第二次打包构建速度更快
+    <br>文件资源缓存
+       <br>hash：每次webpack构建时会生成一个唯一的hash值.
+           <br>问题：因为js和css同时使用一个hash值。
+             <br>如果重新打包，会导致所有缓存失效。（可能我却只改动一个文件）
+       <br>chunkhash: 根据chunk生成的hash值。如果打包来源于同一个chunk，那么hash就一样。
+           <br>问题：js和css的hash值还是一样的
+              <br>因为css是在js中被引入的，所以同属于一个chunk
+       <br>contenthash：根据文件的内容生成hash值。不同文件hash值一定是不一样的。所以一般都用contenthash      
+            <br>---> 让代码上线运行缓存更好使用

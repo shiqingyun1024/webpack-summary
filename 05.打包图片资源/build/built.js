@@ -163,7 +163,7 @@ eval("module.exports = \"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBD
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"ab9ab522.jpeg\";\n\n//# sourceURL=webpack:///./src/images/vue3.jpeg?");
+eval("module.exports = __webpack_require__.p + \"imgs/ab9ab522.jpeg\";\n\n//# sourceURL=webpack:///./src/images/vue3.jpeg?");
 
 /***/ }),
 
