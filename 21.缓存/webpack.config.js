@@ -19,6 +19,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
        chunkhash: 根据chunk生成的hash值。如果打包来源于同一个chunk，那么hash就一样。
            问题：js和css的hash值还是一样的
               因为css是在js中被引入的，所以同属于一个chunk
+       contenthash：根据文件的内容生成hash值。不同文件hash值一定是不一样的。      
 */ 
 
 
