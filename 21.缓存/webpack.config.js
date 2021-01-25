@@ -12,6 +12,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 缓存：
     babel缓存
        cacheDirectory:true
+       --> 让第二次打包构建速度更快
     文件资源缓存
        hash：每次webpack构建时会生成一个唯一的hash值.
            问题：因为js和css同时使用一个hash值。
@@ -20,6 +21,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
            问题：js和css的hash值还是一样的
               因为css是在js中被引入的，所以同属于一个chunk
        contenthash：根据文件的内容生成hash值。不同文件hash值一定是不一样的。      
+            ---> 让代码上线运行缓存更好使用
 */ 
 
 
