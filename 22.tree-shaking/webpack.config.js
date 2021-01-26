@@ -19,6 +19,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
      所以要这样配置,这样的话就不会对css和less文件进行tree-shaking处理了
      "sideEffects":["*.css","*.less"]
 
+   详情请阅读官网：https://webpack.docschina.org/guides/tree-shaking/#root  
+
 */ 
 
 
