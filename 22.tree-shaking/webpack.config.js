@@ -9,6 +9,12 @@ const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plug
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 /*
+ tree shaking: 去除无用代码
+   前提：1、必须使用ES6模块化  2、开启production环境
+   作用：减少代码体积
+
+   在package.json中配置
+     "sideEffects":false  所有代码都没有副作用（都可以进行tree shaking）
 
 */ 
 
@@ -168,4 +174,5 @@ module.exports = {
     ],
     // 模式
     mode: 'production',
+    devtool:'source-map'
 }

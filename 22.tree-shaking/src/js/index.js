@@ -1,3 +1,4 @@
+import {mul} from './test';
 import "../index.less"
 function add(x, y) {
     return x + y;
@@ -9,3 +10,5 @@ function sum(...args){
 }
 
 console.log(sum(1,2,3,4))
+
+console.log(mul(2,8))
