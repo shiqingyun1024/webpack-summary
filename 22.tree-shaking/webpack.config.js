@@ -14,7 +14,10 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
    作用：减少代码体积
 
    在package.json中配置
-     "sideEffects":false  所有代码都没有副作用（都可以进行tree shaking）
+     "sideEffects":false  所有代码都没有副作用（都可以进行tree shaking）加上之后打包之后的build里面就没有css文件夹了。
+     问题：可能会把css / @babel/polyfill 等（副作用）文件干掉
+     所以要这样配置,这样的话就不会对css和less文件进行tree-shaking处理了
+     "sideEffects":["*.css","*.less"]
 
 */ 
 

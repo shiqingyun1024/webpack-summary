@@ -47,5 +47,5 @@
       "not op_mini all"
     ]
   },
-  "sideEffects":false
+  "sideEffects":["*.css"]
 }
