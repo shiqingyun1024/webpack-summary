@@ -5,14 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
     // 入口文件
     // 单入口  单页面应用程序会这样写
-    // entry:'./src/js/index.js',
-    // 多入口  多页面应用程序
-    entry:{
-      // 多入口: 每个入口输出一个bundle
-    //   main:'./src/js/index.js',
-      index:'./src/js/index.js',
-      test:'./src/js/test.js'
-    },
+    entry:'./src/js/index.js',
     // 出口文件
     output:{
         // [name]:取文件名，对应entry中的main和test，如果把main改为index，那么输出的文件名就是index.hash.js
@@ -40,6 +33,12 @@ module.exports = {
         })
 
     ],
+    // 代码分割配置
+    optimization:{
+        splitChunks:{
+            chunks:'all'
+        }
+    },
     // 模式
     mode:"production"
 }
