@@ -13,7 +13,7 @@ module.exports = {
     },
     // 出口文件
     output:{
-        filename:'js/built.[contenthash:8].js',
+        filename:'js/[name].[contenthash:8].js',
         path:resolve(__dirname,'build')
     },
     // loader的配置
