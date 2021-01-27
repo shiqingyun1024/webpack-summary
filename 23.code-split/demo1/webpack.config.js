@@ -3,10 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // webpack是基于node的，所以遵循commonjs规范
 module.exports = {
     // 入口文件
-    entry:'./src/js/index.js',
+    // 单入口
+    // entry:'./src/js/index.js',
+    // 多入口
+    entry:{
+      // 多入口
+      main:'./src/js/index.js',
+      test:'./src/js/test.js'
+    },
     // 出口文件
     output:{
-        filename:'js/built.js',
+        filename:'js/built.[contenthash:8].js',
         path:resolve(__dirname,'build')
     },
     // loader的配置
