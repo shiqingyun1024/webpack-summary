@@ -14,6 +14,7 @@ import('./test')
    .then(({mul})=>{
       //  文件加载成功  
        console.log('1234')
+       console.log(mul)
        console.log(mul(2,5))
    })
    .catch(()=>{
