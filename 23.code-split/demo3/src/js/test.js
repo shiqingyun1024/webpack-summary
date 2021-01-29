@@ -5,7 +5,7 @@ function jian(x,y){
    return x-y
 }
 
-export default{
+export {
    mul,
    jian
 }
