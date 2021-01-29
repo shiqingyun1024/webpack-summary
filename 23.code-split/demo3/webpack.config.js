@@ -4,14 +4,14 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 // webpack是基于node的，所以遵循commonjs规范
 module.exports = {
     // 入口文件
-    // 单入口  单页面应用程序会这样写
-    // entry:'./src/js/index.js',
-    entry:{
+    // 单入口  单页面应用程序会这样写，如果是单文件的话，也想做代码分割，需要写在js里面。
+    entry:'./src/js/index.js',
+    // entry:{
         // 多入口: 每个入口输出一个bundle
       //   main:'./src/js/index.js',
-        index:'./src/js/index.js',
-        test:'./src/js/test.js'
-      },
+        // index:'./src/js/index.js',
+        // test:'./src/js/test.js'
+    //   },
     // 出口文件
     output:{
         // [name]:取文件名，对应entry中的main和test，如果把main改为index，那么输出的文件名就是index.hash.js
