@@ -1,4 +1,4 @@
-const { path } = require('path');
+const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // 因为webpack是基于node的，所以遵循commonjs规范
