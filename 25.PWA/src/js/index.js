@@ -11,4 +11,18 @@ function sum(...args){
 
 console.log(sum(1,2,3,4))
 
-console.log(mul(2,8))
+console.log(mul(2,8));
+
+// 注册serviceworker
+// 处理兼容性问题
+if('serviceworker' in navigator){
+    window.addEventListener('load',()=>{
+        navigator.serviceWorker.register('/service-worker.js')
+        .then(()=>{
+            console.log('servicework注册成功了~')
+        })
+        .catch(()=>{
+            console.log('servicework注册失败了~')
+        })
+    })
+}

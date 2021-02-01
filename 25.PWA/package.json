@@ -26,7 +26,8 @@
     "postcss-preset-env": "^6.7.0",
     "url-loader": "^4.1.1",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "workbox-webpack-plugin": "^6.1.0"
   },
   "dependencies": {
     "D": "^1.0.0",
@@ -47,5 +48,8 @@
       "not op_mini all"
     ]
   },
-  "sideEffects":["*.css","*.less"]
+  "sideEffects": [
+    "*.css",
+    "*.less"
+  ]
 }
