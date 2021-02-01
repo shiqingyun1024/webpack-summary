@@ -21,7 +21,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
    详情请阅读官网：https://webpack.docschina.org/guides/tree-shaking/#root  
 
-*/ 
+*/
 
 
 // 定义nodejs的环境变量:决定使用package.json中的browserslist的生产环境还是测试环境
@@ -90,6 +90,27 @@ module.exports = {
                     publicPath: '/build/imgs/'
                 }
             },
+            /*
+            语法检查：eslint-loader  eslint库
+            注意：只检查自己写的源代码，第三方的库是不用检查的
+            设置检查规则：
+            在package.json中eslintConfig中设置
+            "eslintConfig":{
+                "extends":"airbnb-base"
+            }
+            airbnb --> 需要三个库 eslint-config-airbnb-base  eslint  eslint-plugin-import.
+            所以要安装：eslint-loader eslint-config-airbnb-base  eslint  eslint-plugin-import
+            */
+            {
+                test: /\.js$/,
+                // 排除第三方的检查
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+                options: {
+                    //  自动修复eslint的错误
+                    fix: true
+                }
+            },
             // js的兼容性处理  babel-loader @babel/core @babel/preset-env
             // 需要做兼容性的就做：按需加载。 --> core-js
             {
@@ -124,7 +145,7 @@ module.exports = {
                     ],
                     // 开启babel缓存 ===== 为什么要开启缓存，因为假如这个项目中有100个js文件，但是我只改其中一个，这个时候另外99个文件就不需要重新打包了，直接使用缓存即可，这样打包构建速度更快更好。
                     // 第二次构建时，会读取之前的缓存。
-                    cacheDirectory:true
+                    cacheDirectory: true
                 }
             },
             // 处理html中的图片资源
@@ -179,5 +200,5 @@ module.exports = {
     ],
     // 模式
     mode: 'production',
-    devtool:'source-map'
+    devtool: 'source-map'
 }
