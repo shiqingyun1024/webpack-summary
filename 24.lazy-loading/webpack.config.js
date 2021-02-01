@@ -7,7 +7,7 @@ module.exports = {
     entry: "./src/js/index.js",
     // 出口文件
     output: {
-        filename: 'js/built.js',
+        filename: 'js/[name].[contenthash:8].js',
         path: resolve(__dirname, 'build')
     },
     // loader的配置
