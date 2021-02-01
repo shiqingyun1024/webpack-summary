@@ -1,1 +1,1 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[1],[,function(n,o,u){"use strict";function t(n,o){return n*o}function r(n,o){return n-o}u.r(o),u.d(o,"mul",(function(){return t})),u.d(o,"jian",(function(){return r})),console.log(t(2,8))}]]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],[,function(n,o,t){"use strict";function u(n,o){return n*o}function c(n,o){return n-o}t.r(o),t.d(o,"mul",(function(){return u})),t.d(o,"jian",(function(){return c})),console.log("test.js文件进行加载"),console.log(u(2,8))}]]);
