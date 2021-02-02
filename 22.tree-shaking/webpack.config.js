@@ -7,20 +7,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 // 拷贝文件
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+// PWA
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 /*
- tree shaking: 去除无用代码
-   前提：1、必须使用ES6模块化  2、开启production环境
-   作用：减少代码体积
-
-   在package.json中配置
-     "sideEffects":false  所有代码都没有副作用（都可以进行tree shaking）加上之后打包之后的build里面就没有css文件夹了。
-     问题：可能会把css / @babel/polyfill 等（副作用）文件干掉
-     所以要这样配置,这样的话就不会对css和less文件进行tree-shaking处理了
-     "sideEffects":["*.css","*.less"]
-
-   详情请阅读官网：https://webpack.docschina.org/guides/tree-shaking/#root  
-
+ PWA:渐进式网络开发应用程序(离线可访问)
+    要使用workbox这个开源插件。
+     workbox --->workbox-webpack-plugin
 */ 
 
 
@@ -175,7 +168,18 @@ module.exports = {
                 to: 'doc',
                 ignore: ['.*']
             }]
-        )
+        ),
+        // PWA
+        new WorkboxWebpackPlugin.GenerateSW({
+            /*
+              1. 帮助serviceworker快速启动
+              2. 删除旧的
+
+              生成一个serviceworker配置文件
+            */ 
+            clientsClaim:true,
+            skipWaiting:true
+        })
     ],
     // 模式
     mode: 'production',
