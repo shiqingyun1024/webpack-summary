@@ -6,10 +6,10 @@ const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports={
     // 入口文件
-    entry:'./src/index.js',
+    entry:'./src/js/index.js',
     // 出口文件
     output:{
-        filename:'built.js',
+        filename:'js/built.js',
         path:resolve(__dirname,'build')
     },
     // loader
@@ -31,6 +31,9 @@ module.exports={
 
     ],
     // 模式
-    mode:'development'
-    // mode:'production'
+    mode:'production',
+    externals:{
+        // 忽略库名 -- npm包名   拒绝jQuery被打包进来
+        jquery: 'jQuery'
+    }
 }
