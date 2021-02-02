@@ -38,9 +38,9 @@ console.log(mul(2, 8));
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js').then(() => {
-      console.log('servicework注册成功了~');
+      console.log('serviceWork注册成功了~');
     }).catch(() => {
-      console.log('servicework注册失败了~');
+      console.log('serviceWork注册失败了~');
     });
   });
 }
