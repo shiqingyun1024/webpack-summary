@@ -195,7 +195,7 @@ module.exports = {
               1. 帮助serviceworker快速启动
               2. 删除旧的serviceworker
 
-              生成一个serviceworker配置文件
+              生成一个serviceworker配置文件，通过这个配置文件去注册serviceworker
             */ 
             clientsClaim:true,
             skipWaiting:true

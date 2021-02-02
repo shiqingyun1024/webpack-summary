@@ -25,6 +25,8 @@ console.log(mul(2, 8));
     "env":{
       "browser":true // 支持浏览器端全局变量,如果是node端，就写"node":true
     }
+
+  2. serviceworker代码必须运行在服务器上 
 */
 // 注册serviceworker
 // 处理兼容性问题
