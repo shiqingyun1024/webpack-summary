@@ -94,16 +94,16 @@ module.exports = {
             airbnb --> 需要三个库 eslint-config-airbnb-base  eslint  eslint-plugin-import.
             所以要安装：eslint-loader eslint-config-airbnb-base  eslint  eslint-plugin-import
             */
-            {
-                test: /\.js$/,
-                // 排除第三方的检查
-                exclude: /node_modules/,
-                loader: 'eslint-loader',
-                options: {
-                    //  自动修复eslint的错误
-                    fix: true
-                }
-            },
+            // {
+            //     test: /\.js$/,
+            //     // 排除第三方的检查
+            //     exclude: /node_modules/,
+            //     loader: 'eslint-loader',
+            //     options: {
+            //         //  自动修复eslint的错误
+            //         fix: true
+            //     }
+            // },
             // js的兼容性处理  babel-loader @babel/core @babel/preset-env
             // 需要做兼容性的就做：按需加载。 --> core-js
             {
