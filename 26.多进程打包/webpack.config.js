@@ -114,11 +114,16 @@ module.exports = {
                     /*
                        开启多进程打包.  有利有弊
                        其中进程启动大概为600ms，进程通信也有开销。
-                       只有工作消耗时间比较长，才需要多进程打包
-
-                    
+                       只有工作消耗时间比较长，才需要多进程打包。
+                       平时js文件相对多一些，js进行babel-loader时花费的时间越长，使用进程打包的效果越明显。
                     */ 
-                    'thread-loader',
+                    // 'thread-loader',
+                    {
+                        loader: 'thread-loader',
+                        options:{
+                            workers: 2 // 设置进程，这里是2个
+                        }
+                    },
                     {
                         loader: 'babel-loader',
                         options: {
