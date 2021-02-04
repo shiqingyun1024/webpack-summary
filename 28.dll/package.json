@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "html-webpack-plugin": "^4.5.0",
+    "jquey": "0.0.1-security",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   }
