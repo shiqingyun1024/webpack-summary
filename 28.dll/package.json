@@ -13,5 +13,9 @@
     "jquey": "0.0.1-security",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4",
+    "jquery": "^3.5.1"
   }
 }
