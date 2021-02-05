@@ -34,8 +34,10 @@ module.exports={
         new webpack.DllReferencePlugin({
             manifest:resolve(__dirname,'dll/manifest.json')
         }),
-        // 将某个文件打包输出去，并在html中自动引入
-        new AddAssetHtmlWebpackPlugin({})
+        // 将某个文件打包输出去，并在html中自动引入该资源
+        new AddAssetHtmlWebpackPlugin({
+            filepath:resolve(__dirname,'dll/jquery.js')
+        })
 
     ],
     // 模式
