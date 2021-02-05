@@ -1,5 +1,6 @@
 /*
-使用dll技术，对某些库（第三方库：jquery、react、vue...）进行单独打包
+使用dll技术，对某些库（第三方库：jquery、react、vue...）进行单独打包,
+好处是不用重复打包
 当你运行webpack时，默认查找webpack.config.js 配置文件
 需求：需要运行 webpack.dll.js 文件
    ---> webpack --config webpack.dll.js
