@@ -354,4 +354,8 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
 ## 生产环境性能优化
 * 优化打包构建速度
   * oneOf  优化loader，让文件只适配其中的一个loader，就不往下适配了，优化速度，但是不能把文件要用到的两个或多个放在一个oneOf里面。
+  * babel缓存  优化打包构建速度。
 * 优化代码运行的性能
+  * 缓存(hash-chunkhash-contenthash)
+  * tree shaking  满足两个条件 1、es6模块化  2、production环境 production环境下会自动压缩代码，UglifyJS这个插件在压缩时，会自动去掉没有用到的代码。
+  * code split 代码分割
