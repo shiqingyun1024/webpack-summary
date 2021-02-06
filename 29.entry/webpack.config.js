@@ -1,6 +1,12 @@
 // webpack是基于node的，所以遵循commonjs规范
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+/*
+  entry: 入口起点
+       1、string
+       2、array
+       3、object
+*/ 
 module.exports = {
     // 入口文件
     entry:'./src/inde.js',
