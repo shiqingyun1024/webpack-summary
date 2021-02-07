@@ -18,7 +18,9 @@ module.exports = {
     },
     // 插件配置
     plugins:[
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template:'./src/index.html'
+        })
     ],
     // 模式
     mode:'development'
