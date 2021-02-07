@@ -86,14 +86,27 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/count.js":
+/*!**********************!*\
+  !*** ./src/count.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction count(x,y){\n   return x - y;\n}\n/* harmony default export */ __webpack_exports__[\"default\"] = (count);\n\n//# sourceURL=webpack:///./src/count.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("function add(x,y){\n   return x+y;\n}\nconsole.log(add(2,3))\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _count__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./count */ \"./src/count.js\");\n\nfunction add(x,y){\n   return x+y;\n}\nconsole.log(add(2,3))\nconsole.log(Object(_count__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(5,3))\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
