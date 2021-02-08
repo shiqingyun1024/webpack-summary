@@ -4,6 +4,13 @@
 */ 
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+/*
+  entry: 入口起点
+   1. string ---> './src/index.js'
+      打包形成一个chunk。 输出一个bundle
+   2. array
+   3. object
+*/ 
 module.exports={
     // 入口文件
     entry:'./src/index.js',
