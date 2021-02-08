@@ -18,7 +18,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
       多入口
       有几个入口文件就形成几个chunk，输出几个bundle文件
       此时chunk的名称是key
-      
+
+
+   ---> 特殊用法
+   {
+       // 所有入口文件最终只会形成一个chunk，输出出去只有一个bundle文件。
+       index:['./src/index.html','./src/count.js'],
+       // 形成一个chunk，输出一个bundle文件
+       add:'./src/add.js'
+   }   
 
 */ 
 module.exports={
