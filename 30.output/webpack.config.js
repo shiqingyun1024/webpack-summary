@@ -14,7 +14,9 @@ module.exports={
         // 输出文件目录（将来所有资源输出的公共目录）
         path:resolve(__dirname,'build'),
         // 所有资源引入公共路径前缀 ---> 'imgs/a.jpg' --> '/imgs/a.jpg' 一般用于生产环境
-        publicPath:'/'
+        publicPath:'/',
+        // 非入口chunk的名称
+        chunkFilename:'js/[name]_chunk.js',
     },
     // loader
     module:{
