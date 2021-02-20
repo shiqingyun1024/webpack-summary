@@ -21,8 +21,8 @@ module.exports={
         // library的作用  表示整个库向外暴露的变量名  main.js中的window["main"] =中的"main"
         library:'[name]',
         // libraryTarget表示变量名添加到哪个上  main.js中的window["main"] =中的window   这样其他的js文件可以使用main.js中的方法
-        // libraryTarget:'window',
-        libraryTarget:'commonjs' // 这个时候main.js中的
+        libraryTarget:'window',
+        // libraryTarget:'commonjs' // 这个时候main.js中的开头是 exports["main"]
     },
     // loader
     module:{
