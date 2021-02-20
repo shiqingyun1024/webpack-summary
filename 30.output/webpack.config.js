@@ -17,6 +17,9 @@ module.exports={
         publicPath:'/',
         // 非入口chunk的名称
         chunkFilename:'js/[name]_chunk.js',
+        // library的作用
+        library:'[name]',
+        libraryTarget:'window'
     },
     // loader
     module:{
