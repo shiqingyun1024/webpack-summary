@@ -12,5 +12,9 @@
     "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "D": "^1.0.0",
+    "clean-webpack-plugin": "^3.0.0"
   }
 }

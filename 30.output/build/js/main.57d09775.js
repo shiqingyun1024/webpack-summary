@@ -1,3 +1,4 @@
+window["main"] =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// install a JSONP callback for chunk loading
 /******/ 	function webpackJsonpCallback(data) {
@@ -187,7 +188,7 @@
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
 /******/
-/******/ 	var jsonpArray = window["webpackJsonp"] = window["webpackJsonp"] || [];
+/******/ 	var jsonpArray = window["webpackJsonp_name_"] = window["webpackJsonp_name_"] || [];
 /******/ 	var oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
 /******/ 	jsonpArray.push = webpackJsonpCallback;
 /******/ 	jsonpArray = jsonpArray.slice();
@@ -208,7 +209,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// import count from './count'\nfunction add(x,y){\n   return x+y;\n}\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./count */ \"./src/count.js\")).then(({default:count})=>{\n   console.log(count(5,3))\n})\nconsole.log(add(2,3))\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// import count from './count'\nfunction add(x,y){\n   return x+y;\n}\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./count */ \"./src/count.js\")).then(({default:count})=>{\n   console.log(count(5,3))\n})\nconsole.log(add(2,3))\n\n\n//# sourceURL=webpack://%5Bname%5D/./src/index.js?");
 
 /***/ })
 

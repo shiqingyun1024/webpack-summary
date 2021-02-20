@@ -4,6 +4,7 @@
 */ 
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports={
     // 入口文件
     entry:'./src/index.js',
@@ -36,6 +37,9 @@ module.exports={
         new HtmlWebpackPlugin({
             // 复制./src/index.html文件，并自动引入打包输出的所有资源(JS/CSS)
             template:'./src/index.html'
+        }),
+        new CleanWebpackPlugin({
+            cleanAfterEveryBuildPatterns: ['build']
         })
 
     ],
