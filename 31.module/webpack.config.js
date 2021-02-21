@@ -44,7 +44,13 @@ module.exports={
             // 延后执行
             // enforce:'post',
             //   单个loader用loader
-            loader:'eslint-loader'
+            loader:'eslint-loader',
+            // 选项配置
+            options:{}
+          },
+          {
+            //  以下配置只会生效一个,详情请看 20.oneOf这一章
+            oneOf:[]
           }
         ]
     },
