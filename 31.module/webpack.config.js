@@ -24,10 +24,28 @@ module.exports={
         libraryTarget:'window',
         // libraryTarget:'commonjs' // 这个时候main.js中的开头是 exports["main"]
     },
-    // loader
+    // loader的配置
     module:{
         rules:[
-     //loader的配置 
+          //loader的配置 
+          {
+              test:/\.css$/,
+            //   多个loader用use
+            use:['style-loader','css-loader']
+          },
+          {
+              test:/\.js$/,
+            //   排除node_modules下的文件  相当于性能优化，不检查node_modules下的文件
+            exclude:/node_modules/,
+            // 只检查src下的js文件  相当于性能优化，只检查src文件夹下的js文件
+            include:resolve(__dirname,'src'),
+            // 优先执行
+            enforce:'pre',
+            // 延后执行
+            // enforce:'post',
+            //   单个loader用loader
+            loader:'eslint-loader'
+          }
         ]
     },
     // plugins
