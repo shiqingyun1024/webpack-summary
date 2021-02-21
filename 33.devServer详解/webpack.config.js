@@ -64,5 +64,23 @@ module.exports={
       extensions:['.js','.json','css'],
       // 告诉webpack解析模块是去找哪个目录，当然也可以直接写成绝对路径 resolve(__dirname,'node_modules') 这种形式
       modules:[resolve(__dirname,'node_modules'),'node_modules']
-  }
+    },
+
+    // 开发服务器
+    devServer:{
+        // 运行代码的目录
+        contentBase: resolve(__dirname,'build'),
+        // 
+        watchContentBase:true,
+        // 启动gzip压缩， 压缩之后代码体积变小，运行速度就会加快
+        compress:true,
+        // 端口号
+        port:5000,
+        // 域名
+        host:'localhost',
+        // 自动打开浏览器
+        open:true,
+        // 开启HMR功能
+        hot:true
+    }
 }
