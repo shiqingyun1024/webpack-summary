@@ -1,64 +1,68 @@
-const { resolve } = require('path');
+/*
+ loader: 1、下载  2、使用（配置loader）
+ plugins：1、下载 2、引入  3、使用
+*/ 
+const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-// 因为node使用的是commonjs，webpack配置是基于node的，所以也是commonjs规范
-module.exports = {
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+module.exports={
     // 入口文件
-    entry: './src/index.js',
+    entry:'./src/index.js',
     // 出口文件
-    output: {
-        filename: 'built.js',
-        path: resolve(__dirname, 'build')
+    output:{
+        // 文件名称 （指定名称+目录）
+        filename:'js/[name].[contenthash:8].js',
+        // 输出文件目录（将来所有资源输出的公共目录）
+        path:resolve(__dirname,'build'),
+        // 所有资源引入公共路径前缀 ---> 'imgs/a.jpg' --> '/imgs/a.jpg' 一般用于生产环境
+        publicPath:'/',
+        // 非入口chunk的名称
+        chunkFilename:'js/[name]_chunk.js',
+        // library的作用  表示整个库向外暴露的变量名  main.js中的window["main"] =中的"main"
+        library:'[name]',
+        // libraryTarget表示变量名添加到哪个上  main.js中的window["main"] =中的window   这样其他的js文件可以使用main.js中的方法
+        libraryTarget:'window',
+        // libraryTarget:'commonjs' // 这个时候main.js中的开头是 exports["main"]
     },
-    // loader配置
-    module: {
-        rules: [
-            // 处理样式的loader
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ]
-            },
-            // 处理字体图标,用file-loader
-            {
-                // 除了什么之外
-                exclude: /\.(css|html|js)$/,
-                loader: "file-loader",
-                options: {
-                    name: '[hash:8].[ext]'
-                }
-            }
+    // loader的配置
+    module:{
+        rules:[
+          //loader的配置 
+          {
+              test:/\.css$/,
+            //   多个loader用use
+            use:['style-loader','css-loader']
+          }
         ]
     },
-    // plugin配置
-    plugins: [
+    // plugins
+    plugins:[
+        // plugins的配置
+        // html-webpack-plugin
+        // 功能：默认会创建一个空的HTML，自动引入打包输出的所有资源(JS/CSS)
+        // 如果有这样的需求 ，需要有结构的html文件，需要加配置，template
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            // 复制./src/index.html文件，并自动引入打包输出的所有资源(JS/CSS)
+            template:'./src/index.html'
         }),
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ['build']
         })
+
     ],
     // 模式
-    mode: 'development',
+    mode:'development',
+    // mode:'production',
 
-    // 开发服务器 devServer: 用来自动化（自动编译，自动打开浏览器，自动刷新浏览器~~~）
-    // 特点：只会在内存中编译打包，不会有任何输出（如果直接运行npx webpack-dev-server，是没有输出的，不会生成build文件夹，因为是在内存中编译打包。运行webpack会有输出，输出build文件夹）
-    // 启动devServer指令为：npx webpack-dev-server，因为没有全局安装，所以用npx webpack-dev-server，如果全局安装了，可以直接webpack-dev-server，但是没有必要。
-    // webapck全局安装了，所以可以直接用webpack，如果没有全局安装，就用 npx webpack
-    // 一定要安装webpack-dev-server
-    devServer: {
-        // 项目构建后路径
-        contentBase: resolve(__dirname, 'build'),
-        //  启动gzip压缩
-        compress: true,
-        // 启动服务的端口号
-        port: 3000,
-        // 自动打开浏览器
-        open:true
-    }
-
+    // 解析模块的规则
+    resolve:{
+      // 配置解析模块的路径别名: 优点是 简写路径, 缺点:路径没有提示
+      alias:{
+         $css: resolve(__dirname,'src/css')
+      },
+      // 配置省略文件路径的后缀名,在文件中引入其他文件的时候可以省略文件名后缀
+      extensions:['.js','.json','css'],
+      // 告诉webpack解析模块是去找哪个目录，当然也可以直接写成绝对路径 resolve(__dirname,'node_modules') 这种形式
+      modules:[resolve(__dirname,'node_modules'),'node_modules']
+  }
 }
