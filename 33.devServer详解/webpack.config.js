@@ -72,6 +72,10 @@ module.exports={
         contentBase: resolve(__dirname,'build'),
         // 监视 contentBase目录下的所有文件，一旦文件变化就会reload
         watchContentBase:true,
+        watchOptions:{
+           // 忽略文件，这样即使文件发生变化化，也不会reload
+           ignored:/node_modules/  
+        },
         // 启动gzip压缩， 压缩之后代码体积变小，运行速度就会加快
         compress:true,
         // 端口号
@@ -83,6 +87,8 @@ module.exports={
         // 开启HMR功能
         hot:true,
         // 不要显示启动服务器日志信息
-        clientLogLevel:'none'
+        clientLogLevel:'none',
+        // 除了一些基本启动信息以外，其他内容都不要显示
+        quiet:true
     }
 }
