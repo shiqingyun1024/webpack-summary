@@ -89,6 +89,8 @@ module.exports={
         // 不要显示启动服务器日志信息
         clientLogLevel:'none',
         // 除了一些基本启动信息以外，其他内容都不要显示
-        quiet:true
+        quiet:true,
+        // 如果出错了，不要全屏提示~
+        overlay:false
     }
 }
