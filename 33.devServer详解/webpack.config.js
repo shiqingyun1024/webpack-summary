@@ -70,7 +70,7 @@ module.exports={
     devServer:{
         // 运行代码的目录
         contentBase: resolve(__dirname,'build'),
-        // 
+        // 监视 contentBase目录下的所有文件，一旦文件变化就会reload
         watchContentBase:true,
         // 启动gzip压缩， 压缩之后代码体积变小，运行速度就会加快
         compress:true,
@@ -81,6 +81,8 @@ module.exports={
         // 自动打开浏览器
         open:true,
         // 开启HMR功能
-        hot:true
+        hot:true,
+        // 不要显示启动服务器日志信息
+        clientLogLevel:'none'
     }
 }
