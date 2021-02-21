@@ -70,6 +70,14 @@ module.exports={
 
     ],
     // 模式
-    mode:'development'
-    // mode:'production'
+    mode:'development',
+    // mode:'production',
+
+    // 解析模块的规则
+    resolve:{
+      // 配置解析模块的路径别名: 优点是 简写路径, 缺点:路径没有提示
+      alias:{
+         $css: resolve(__dirname,'src/css')
+      }
+  }
 }

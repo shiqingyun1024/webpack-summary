@@ -1,4 +1,6 @@
 // import count from './count'
+// import './css/index.css'
+import '$css/index.css'  // 指定了别名路径，可以这样写。
 function add(x,y){
    return x+y;
 }
