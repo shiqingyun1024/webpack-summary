@@ -70,7 +70,8 @@ module.exports={
         // 代码分割
         splitChunks:{
             chunks:'all',
-            minSize: 30*1024, //分割的chunk最小为30kb，只有超过30kb才会进行分割
+            // 下面都是默认值，可以不写~
+            /* minSize: 30*1024, //分割的chunk最小为30kb，只有超过30kb才会进行分割
             maxSize: 0, // 最大没有限制
             minChunks:1,// 要提取的chunk最少被引用1次
             maxAsyncRequests: 5, // 按需加载时并行加载的文件的最大数量
@@ -94,7 +95,7 @@ module.exports={
                     reuseExistingChunk:true
                 }
 
-            }
+            }*/
         }
     }
 }
