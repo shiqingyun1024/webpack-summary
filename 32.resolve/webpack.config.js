@@ -43,7 +43,7 @@ module.exports={
         // 如果有这样的需求 ，需要有结构的html文件，需要加配置，template
         new HtmlWebpackPlugin({
             // 复制./src/index.html文件，并自动引入打包输出的所有资源(JS/CSS)
-            template:'./src/index.html'
+            template:'src/index.html'
         }),
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns: ['build']
@@ -58,10 +58,10 @@ module.exports={
     resolve:{
       // 配置解析模块的路径别名: 优点是 简写路径, 缺点:路径没有提示
       alias:{
-         $css: resolve(__dirname,'src/css')
+         '$css': resolve(__dirname,'src/css')
       },
       // 配置省略文件路径的后缀名,在文件中引入其他文件的时候可以省略文件名后缀
-      extensions:['.js','.json','css'],
+      extensions:['.js','.json','.css'],
       // 告诉webpack解析模块是去找哪个目录，当然也可以直接写成绝对路径 resolve(__dirname,'node_modules') 这种形式
       modules:[resolve(__dirname,'node_modules'),'node_modules']
   }

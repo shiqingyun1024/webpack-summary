@@ -258,7 +258,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _nod
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var $css_index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! $css/index.css */ \"./src/css/index.css\");\n// import count from './count'\n// import './css/index.css'\n  // 指定了别名路径，可以这样写。\nfunction add(x,y){\n   return x+y;\n}\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./count */ \"./src/count.js\")).then(({default:count})=>{\n   console.log(count(5,3))\n})\nconsole.log(add(2,3))\n\n\n//# sourceURL=webpack://%5Bname%5D/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var $css_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! $css/index */ \"./src/css/index.css\");\n// import count from './count'\n// import './css/index.css'\n  // 指定了别名路径，可以这样写。webpack.config.js中配置了extensions，所以可以不写文件后缀名\nfunction add(x,y){\n   return x+y;\n}\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./count */ \"./src/count.js\")).then(({default:count})=>{\n   console.log(count(5,3))\n})\nconsole.log(add(2,3))\n\n\n//# sourceURL=webpack://%5Bname%5D/./src/index.js?");
 
 /***/ })
 
