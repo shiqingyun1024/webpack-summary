@@ -96,6 +96,11 @@ module.exports={
                 }
 
             }*/
+        },
+        // 将当前模块的记录其他模块的hash单独打包为一个文件 runtime
+        // 解决: 修改a文件导致b文件的contenthash变化
+        runtimeChunk:{
+            name: entrypoint=>`runtime-${entrypoint.name}`
         }
     }
 }

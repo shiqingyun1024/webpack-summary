@@ -4,7 +4,7 @@ import '$css/index'  // 指定了别名路径，可以这样写。webpack.config
 function add(x,y){
    return x+y;
 }
-import('./count').then(({default:count})=>{
+import(/* webpackChunkName:'count' */'./count').then(({default:count})=>{
    console.log(count(5,3))
 })
 console.log(add(2,3))
