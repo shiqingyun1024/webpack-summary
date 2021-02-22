@@ -60,7 +60,7 @@ module.exports={
          $css: resolve(__dirname,'src/css')
       },
       // 配置省略文件路径的后缀名,在文件中引入其他文件的时候可以省略文件名后缀
-      extensions:['.js','.json','css'],
+      extensions:['.js','.json','.css'],
       // 告诉webpack解析模块是去找哪个目录，当然也可以直接写成绝对路径 resolve(__dirname,'node_modules') 这种形式
       modules:[resolve(__dirname,'node_modules'),'node_modules']
     },
