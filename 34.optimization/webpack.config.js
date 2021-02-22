@@ -5,6 +5,8 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+// 压缩的插件
+const TerserWebpackPlugin = require('terser-webpack-plugin');
 module.exports={
     // 入口文件
     entry:'./src/index.js',
@@ -101,6 +103,18 @@ module.exports={
         // 解决: 修改a文件导致b文件的contenthash变化
         runtimeChunk:{
             name: entrypoint=>`runtime-${entrypoint.name}`
-        }
+        },
+        minimizer:[
+            // 配置生产环境的压缩方案：js和css
+            new TerserWebpackPlugin({
+                // 开启缓存
+                cache:true,
+                // 开启多进程打包
+                parallel:true,
+                // 启动source-map
+                sourceMap:true
+
+            })
+        ]
     }
 }
