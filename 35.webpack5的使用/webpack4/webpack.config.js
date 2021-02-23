@@ -5,5 +5,5 @@ module.exports = {
         filename:'[name].js',
         path:resolve(__dirname,'build')
     },
-    mode:'development'
+    mode:'production'
 }
