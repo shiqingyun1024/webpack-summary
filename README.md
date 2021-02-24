@@ -24,15 +24,19 @@ npm i webpack webpack-cli -D  //  当前目录下安装 webpack
 执行webpack的命令时，如果是生产环境的打包命令，代码会自动进行压缩。
 ```
 
-#### 03 打包样式资源
+### 03 打包样式资源
+```
 主要用到了style-loader，css-loader，less-loader。，从右往左，或者从下往上执行，less-loader是把less文件转化为css文件，css-loader是把css文件转化为js文件，style-loader是把css样式通过添加style标签的形式引入到html中。
+```
 
-#### 04 打包html资源
+### 04 打包html资源
+```
 主要用到html-webpack-plugin，它的主要作用是<br>
 // 功能：默认会创建一个空的HTML，自动引入打包输出的所有资源(JS/CSS)<br>
 // 如果有这样的需求 ，需要有结构的html文件，需要加配置，template<br>
 template:'./src/index.html'<br>
 // 复制./src/index.html文件，并自动引入打包输出的所有资源(JS/CSS)<br>
+```
 
 #### 05 打包图片资源
 打包样式资源主要用到url-loader，因为url-loader依赖于file-loader，所以也要安装file-loader。<br>
