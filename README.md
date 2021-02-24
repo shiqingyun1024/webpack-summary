@@ -202,7 +202,7 @@ optimize-css-assets-webpack-plugin
 new OptimizeCssAssetsWebpackPlugin()
 ```
 
-#### 12.js的语法检查
+### 12.js的语法检查
 ```
 语法检查：eslint-loader eslint库
 注意：只检查自己写的源代码，第三方的库是不用检查的
@@ -225,9 +225,9 @@ airbnb --> 需要三个库 eslint-config-airbnb-base eslint eslint-plugin-import
 }
 ```
 
-#### 13.js的兼容性处理
+### 13.js的兼容性处理
+```
 babel-loader，这个是经常能用到的。
-
   js的兼容性处理-- babel-loader @babel/core @babel/preset-env,然后下面是三种解决兼容性的方案，分别下载不同的包
   1、基本的js兼容性处理 ---> @babel/preset-env
      问题：只能转换基本语法，如prmise不能转换
@@ -235,33 +235,34 @@ babel-loader，这个是经常能用到的。
      问题：我只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了~
   3、需要做兼容性的就做：按需加载。 --> core-js
  {
-                test:/\.js$/,
-                exclude:/node_modules/,
-                loader:'babel-loader',
-                options:{
-                    // 预设：指示babel做怎样的兼容性处理。
-                    presets:[
-                        [
-                            '@babel/preset-env',
-                            {
-                                // 按需加载
-                                useBuiltIns:'usage',
-                                // 指定core-js版本
-                                corejs:{
-                                    version:3
-                                },
-                                // 指定兼容性做到哪个版本浏览器
-                                targets:{
-                                    chrome:'60',
-                                    firefox:'60',
-                                    ie:'9',
-                                    safari:'10',
-                                    edge:'17'
-                                }
-                            }
-                        ]
-                    ]
-                }
+    test:/\.js$/,
+    exclude:/node_modules/,
+    loader:'babel-loader',
+    options:{
+    // 预设：指示babel做怎样的兼容性处理。
+    presets:[
+      [
+        '@babel/preset-env',
+        {
+          // 按需加载
+          useBuiltIns:'usage',
+          // 指定core-js版本
+          corejs:{
+            version:3
+          },
+          // 指定兼容性做到哪个版本浏览器
+          targets:{
+            chrome:'60',
+            firefox:'60',
+            ie:'9',
+            safari:'10',
+            edge:'17'
+          }
+        }
+      ]
+    ]
+  }
+```               
 
 
 
