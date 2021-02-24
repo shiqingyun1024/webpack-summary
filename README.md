@@ -147,7 +147,8 @@ MiniCssExtractPlugin.loader这个配置很重要，
 提取出来之后html-webpack-plugin会通过link标签把它引入打包后的html中，这样就不会存在白屏现象了。
 ```
 
-#### 10.css兼容性处理
+### 10.css兼容性处理
+```
 兼容性处理用postcss
 css兼容性处理：postcss--->postcss-loader postcss-preset-env
 其中postcss-preset-env用于识别某些环境，从而加载指定的配置。能够让兼容性精确到每一个版本。
@@ -155,42 +156,42 @@ postcss-preset-env帮postcss找到package.json中browserslist里面的配置，�
 browserslist配置如下：
 "browserslist":{
   "development":[
-// 开发环境 如果想用开发环境就需要设置node环境变量：process.env.NODE_ENV = "development"
-// last 1 chrome version意思是兼容最近的一个chrome浏览器版本
-"last 1 chrome version",
-"last 1 firefox version",
-"last 1 safari version"
-],
-// 生产环境：默认是看生产环境
-"production":[
-">0.2%",// 大于99.8%的浏览器
-"not dead",
-"not op_mini all"
-]
+     // 开发环境 如果想用开发环境就需要设置node环境变量：process.env.NODE_ENV = "development"
+     // last 1 chrome version意思是兼容最近的一个chrome浏览器版本
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  // 生产环境：默认是看生产环境
+  "production":[
+     ">0.2%",// 大于99.8%的浏览器
+     "not dead",
+     "not op_mini all"
+   ]
 },
 
 //  使用loader有两种方式，1、使用loader的默认配置。2、修改loader的配置  
-                //  使用loader的默认配置，如下
-                //  ’postcss-loader‘  
-                //  修改loader的配置
-                {
-                    loader: 'postcss-loader',
-                    // options: {
-                    //     // 这个地方写postcss，千万别写成postcss-loader了
-                    //     ident: 'postcss',
-                    //     // 记住这里返回的是数组，一定要记住，刚开始写成对象了
-                    //     plugins: () => [
-                    //         // postcss的插件
-                    //         require('postcss-preset-env')()
-                    //     ]
-                    // }
-                }
+//  使用loader的默认配置，如下
+//  ’postcss-loader‘  
+//  修改loader的配置
+{
+  loader: 'postcss-loader',
+  /* options: {
+      // 这个地方写postcss，千万别写成postcss-loader了
+      ident: 'postcss',
+      // 记住这里返回的是数组，一定要记住，刚开始写成对象了
+      plugins: () => [
+       // postcss的插件
+      require('postcss-preset-env')()
+       ]
+    } */
+}
 
 如果按照上面写，会报错，如下：
 报错：ValidationError: Invalid options object. PostCSS Loader has been initialized using an options object that does not match the API schema.
  - options has an unknown property 'plugins'. These properties are valid:
 具体怎么解决，请看我的这篇博客。https://blog.csdn.net/xiaolinlife/article/details/112056848
-
+```
 
 #### 11.压缩css
 压缩css的插件是：
