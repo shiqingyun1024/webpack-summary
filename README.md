@@ -266,11 +266,14 @@ babel-loader，这个是经常能用到的。
 
 
 
-#### 14.js的压缩
+### 14.js的压缩
+```  
 // 生产环境下会自动压缩js代码
 mode:'production'
+```  
 
-#### 15.html的压缩
+### 15.html的压缩
+```  
 new HtmlWebpackPlugin({
     template:'./src/index.html',
     // 压缩html代码的设置
@@ -281,21 +284,22 @@ new HtmlWebpackPlugin({
       removeComments:true
     }
 })
+```  
 
-#### 16.生产环境配置
+### 16.生产环境配置
 前面各种配置的集合，具体请看代码。
 
-##### 17.优化配置介绍
+#### 17.优化配置介绍
 * 开发环境性能优化
 * 生产环境性能优化
-###### 开发环境性能优化
+##### 开发环境性能优化
 * 优化打包构建速度 HMR
 * 优化代码调试 source-map
-###### 生产环境性能优化
+##### 生产环境性能优化
 * 优化打包构建速度
 * 优化代码运行的性能
 
-##### 18.HMR
+#### 18.HMR
 HMR: hot module replacement 热模块替换/模块热替换
   作用：一个模块发生变化，只会重新打包这一个模块（而不是打包所有模块）
   极大的提高了构建速度
@@ -306,7 +310,7 @@ HMR: hot module replacement 热模块替换/模块热替换
   html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
       html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
 
-##### 19.source-map
+#### 19.source-map
 
 source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
   [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
@@ -352,12 +356,12 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
 
       --->结论：source-map
 
-##### 20.oneOf
+#### 20.oneOf
  oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
                 以下loader只会匹配一个
                  注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
 
-##### 21.缓存
+#### 21.缓存
 缓存：
     babel缓存
        cacheDirectory:true
