@@ -77,16 +77,17 @@ open:true
 }
 ```
 
-#### 08 开发环境配置
+### 08 开发环境配置
+```
 把上面7项整合起来，就是开发环境的配置了
-/*
+
 开发环境配置：能让代码运行即可
 运行命令：webpack
 npx webpack-dev-server
 
 webpack运行之后将打包结果输出，
 webpack-dev-server在内存中编译，不会输出结果。
-*/
+
 // 其他资源,字体图标等
 {
 // 排除
@@ -99,45 +100,52 @@ outputPath:'media'
 }
 }
 // 指定输出的文件名用outputPath
+```
 
-#### 构建环境介绍：
+### 构建环境介绍：
+```
 开发环境：
-生产环境所做的事情：1、css转化js，js文件太大，加载太慢，所以需要把css抽离出来，style标签加载css文件会有白屏现象，所以生产环境解决这个问题。这个问题09.提取css成单独文件会解答。
+生产环境所做的事情：1、css转化js，js文件太大，加载太慢，所以需要把css抽离出来，style标签加载css文件会有白屏现象，
+所以生产环境解决这个问题。这个问题09.提取css成单独文件会解答。
 2、代码体积很大，进行压缩。
 3、兼容性处理等。
 4、等等
+```
 
-#### 09.提取css成单独文件
+### 09.提取css成单独文件
+```
 为什么提取css成单独文件，因为css转化js，js文件太大，加载太慢，所以需要把css抽离出来。
 mini-css-extract-plugin就是专门解决这个问题的，把css从js中提取出来
 首先，引入const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-然后再plugins进行配置
+然后在plugins进行配置
 // 提取js文件的css文件
 new MiniCssExtractPlugin({
-// 对输出的css文件进行重命名
-filename:'css/built.css'
+  // 对输出的css文件进行重命名
+  filename:'css/built.css'
 })
 在loader中进行配置：
 // loader配置
 module:{
-rules:[
-{
-test:/\.css$/,
-use:[
-// 创建style标签，将样式放入
-// 'style-loader',
-// 这个loader取代style-loader。作用：提取js中的css成单独文件
-MiniCssExtractPlugin.loader,
-// 将css文件整合到js文件中
-'css-loader'
-]
-}
-]
+  rules:[
+    {
+      test:/\.css$/,
+      use:[
+        // 创建style标签，将样式放入
+        // 'style-loader',
+        // 这个loader取代style-loader。作用：提取js中的css成单独文件
+        MiniCssExtractPlugin.loader,
+        // 将css文件整合到js文件中
+        'css-loader'
+      ]
+    }
+  ]
 },
 
-MiniCssExtractPlugin.loader这个配置很重要，它取代了style-loader，把css从js中提取到一个css文件中。
+MiniCssExtractPlugin.loader这个配置很重要，
+它取代了style-loader，把css从js中提取到一个css文件中。
 <link href="css/built.css" rel="stylesheet">
 提取出来之后html-webpack-plugin会通过link标签把它引入打包后的html中，这样就不会存在白屏现象了。
+```
 
 #### 10.css兼容性处理
 兼容性处理用postcss
