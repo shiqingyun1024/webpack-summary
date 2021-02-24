@@ -66,14 +66,14 @@ cleanAfterEveryBuildPatterns:['build']
 webapck全局安装了，所以可以直接用webpack，如果没有全局安装，就用 npx webpack
 // 一定要安装webpack-dev-server
 devServer: {
-// 项目构建后路径
-contentBase: resolve(__dirname, 'build'),
-// 启动gzip压缩
-compress: true,
-// 启动服务的端口号
-port: 3000,
-// 自动打开浏览器
-open:true
+  // 项目构建后路径
+  contentBase: resolve(__dirname, 'build'),
+  // 启动gzip压缩
+  compress: true,
+  // 启动服务的端口号
+  port: 3000,
+  // 自动打开浏览器
+  open:true
 }
 ```
 
@@ -90,14 +90,14 @@ webpack-dev-server在内存中编译，不会输出结果。
 
 // 其他资源,字体图标等
 {
-// 排除
-exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,
-loader: 'file-loader',
-options: {
-name: '[hash:8].[ext]',
-// 指定输出的文件夹名
-outputPath:'media'
-}
+  // 排除
+  exclude: /\.(html|js|less|css|png|jpg|gif|jpeg)$/,
+  loader: 'file-loader',
+  options: {
+    name: '[hash:8].[ext]',
+    // 指定输出的文件夹名
+    outputPath:'media'
+  }
 }
 // 指定输出的文件名用outputPath
 ```
@@ -193,34 +193,37 @@ browserslist配置如下：
 具体怎么解决，请看我的这篇博客。https://blog.csdn.net/xiaolinlife/article/details/112056848
 ```
 
-#### 11.压缩css
+### 11.压缩css
+```
 压缩css的插件是：
 optimize-css-assets-webpack-plugin
 直接使用：
 // 压缩css
 new OptimizeCssAssetsWebpackPlugin()
+```
 
 #### 12.js的语法检查
+```
 语法检查：eslint-loader eslint库
 注意：只检查自己写的源代码，第三方的库是不用检查的
 设置检查规则：
 在package.json中eslintConfig中设置
 "eslintConfig":{
-"extends":"airbnb-base"
+  "extends":"airbnb-base"
 }
 airbnb --> 需要三个库 eslint-config-airbnb-base eslint eslint-plugin-import.
 所以要安装：eslint-loader eslint-config-airbnb-base eslint eslint-plugin-import
-*/ 
 {
-test:/\.js$/,
-// 排除第三方的检查
-exclude:/node_modules/,
-loader:'eslint-loader',
+  test:/\.js$/,
+  // 排除第三方的检查
+  exclude:/node_modules/,
+  loader:'eslint-loader',
   options:{
-  // 自动修复eslint的错误
+    // 自动修复eslint的错误
     fix:true
   }
 }
+```
 
 #### 13.js的兼容性处理
 babel-loader，这个是经常能用到的。
