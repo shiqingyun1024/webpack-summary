@@ -317,7 +317,7 @@ HMR: hot module replacement 热模块替换/模块热替换
   html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
       html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
 ``` 
-#### 19.source-map
+### 19.source-map
 ``` 
 source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
   [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
@@ -363,13 +363,13 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
 
       --->结论：source-map
 ``` 
-#### 20.oneOf
+### 20.oneOf
 ``` 
  oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
  以下loader只会匹配一个
 注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
 ```
-#### 21.缓存
+### 21.缓存
 ```
 缓存：
     babel缓存
