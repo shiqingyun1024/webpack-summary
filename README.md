@@ -306,6 +306,7 @@ new HtmlWebpackPlugin({
 ``` 
 
 ### 18.HMR
+``` 
 HMR: hot module replacement 热模块替换/模块热替换
   作用：一个模块发生变化，只会重新打包这一个模块（而不是打包所有模块）
   极大的提高了构建速度
@@ -315,9 +316,9 @@ HMR: hot module replacement 热模块替换/模块热替换
       注意：HMR功能对js的处理，只能处理非入口js文件的其他文件。因为入口js文件会把其他的js文件引入进来，一旦发生改变，会重新引入，重新进行加载。
   html文件：默认不能使用HMR功能，同时会导致问题：html文件改变不能自动刷新页面~ （html不要做HMR，因为html文件只有一个，这个一个改变了，每次都会重新打包）
       html文件改变不能自动刷新页面解决：修改entry入口，将html文件引入。将entry改成一个数组的形式，如下entry
-
+``` 
 #### 19.source-map
-
+``` 
 source-map:一种提供源代码到构建后代码的映射技术（如果构建后代码出错了，通过映射可以追踪源代码错误）非常利于调试，去找错误的原因
   [inline-|hidden-|eval-][nosources-][cheap-[module-]]source-map
 
@@ -361,13 +362,15 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
      调试友好的话：source-map
 
       --->结论：source-map
-
+``` 
 #### 20.oneOf
+``` 
  oneOf让文件只匹配到下面的其中一个，提升了构建速度，不用每一个都遍历进行匹配规则了。优化了生产环境的构建速度。
-                以下loader只会匹配一个
-                 注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
-
+ 以下loader只会匹配一个
+注意：不能有两个配置处理同一种类型文件，所以需要把eslint-loader配置提到外面。
+```
 #### 21.缓存
+```
 缓存：
     babel缓存
        cacheDirectory:true
@@ -381,7 +384,7 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
               因为css是在js中被引入的，所以同属于一个chunk
        contenthash：根据文件的内容生成hash值。不同文件hash值一定是不一样的。所以一般都用contenthash      
             ---> 让代码上线运行缓存更好使用
-
+```
 
 # webpack性能优化
 * 开发环境性能优化
