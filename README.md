@@ -418,6 +418,20 @@ import(/* webpackChunkName:'test', webpackPrefetch:true*/ './test')
   console.log(error);
 })
 ```
+### 25.PWA
+```
+PWA：渐进式网络开发应用程序（离线可访问）需要借助workbox这个开源插件
+workbox ---> workbox-webpack-plugin
+new WorkboxWebpackPlugin.GenerateSW({
+  /*
+    1. 帮助serviceworker快速启动
+    2. 删除旧的serviceworker
+    生成一个serviceworker配置文件，通过这个配置文件去注册serviceworker
+  */ 
+  clientsClaim:true,
+  skipWaiting:true
+})
+```
 
 
 # webpack性能优化
