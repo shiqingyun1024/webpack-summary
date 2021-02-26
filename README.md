@@ -491,7 +491,20 @@ new WorkboxWebpackPlugin.GenerateSW({
 ```
 ### 27.externals
 ```
-
+通过这种方式引入的依赖库，不需要webpack处理，编译进文件中，在我们需要，使用它的时候可以通过CMD、AMD、或者window全局方式访问。
+比如我们在index.html用CDN的方式引入jquery，webpack编译打包时不处理它，却可以引用到它。
+<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+使用
+const $ = require("jquery")
+$("#content").html("<h1>hello world</h1>")
+配置
+externals:{
+  // 忽略库名 -- npm包名   拒绝jQuery被打包进来
+  jquery: 'jQuery'
+}
+```
+### 28.dll
+```
 ```
 
 
