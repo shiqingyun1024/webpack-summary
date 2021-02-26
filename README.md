@@ -385,6 +385,11 @@ source-map:一种提供源代码到构建后代码的映射技术（如果构建
        contenthash：根据文件的内容生成hash值。不同文件hash值一定是不一样的。所以一般都用contenthash      
             ---> 让代码上线运行缓存更好使用
 ```
+### 22.tree-shaking
+```
+1、生产环境
+2、遵循 ES6 module
+```
 
 # webpack性能优化
 * 开发环境性能优化
