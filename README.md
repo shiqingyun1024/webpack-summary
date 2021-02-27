@@ -645,6 +645,121 @@ module的大概配置如下：
       modules:[resolve(__dirname,'node_modules'),'node_modules']
   }
 ```
+### 33.devServer详解
+```
+// 开发服务器
+    devServer:{
+        // 运行代码的目录
+        contentBase: resolve(__dirname,'build'),
+        // 监视 contentBase目录下的所有文件，一旦文件变化就会reload
+        watchContentBase:true,
+        watchOptions:{
+           // 忽略文件，这样即使文件发生变化化，也不会reload
+           ignored:/node_modules/  
+        },
+        // 启动gzip压缩， 压缩之后代码体积变小，运行速度就会加快
+        compress:true,
+        // 端口号
+        port:5000,
+        // 域名
+        host:'localhost',
+        // 自动打开浏览器
+        open:true,
+        // 开启HMR功能
+        hot:true,
+        // 不要显示启动服务器日志信息
+        clientLogLevel:'none',
+        // 除了一些基本启动信息以外，其他内容都不要显示
+        quiet:true,
+        // 如果出错了，不要全屏提示~
+        overlay:false,
+        // 服务器代理 -->解决开发环境跨域问题
+        proxy:{
+            // 一旦devServer(5000)服务器接收到/api/xxx的请求，就会把请求转发到另外一个服务器(3000)上
+            '/api':{
+                target:'http://localhost:3000',
+                // 发送请求时，请求路径重写: 将/api/xxx --> /xx (去掉/api)
+                pathRewrite:{
+                    '^/api':''
+                }
+            }
+        }
+    }
+```
+### 34.optimization
+```
+// 在生产环境下研究optimization才会有意义
+    optimization:{
+        // 代码分割
+        splitChunks:{
+            chunks:'all',
+            // 下面都是默认值，可以不写~
+            /* minSize: 30*1024, //分割的chunk最小为30kb，只有超过30kb才会进行分割
+            maxSize: 0, // 最大没有限制
+            minChunks:1,// 要提取的chunk最少被引用1次
+            maxAsyncRequests: 5, // 按需加载时并行加载的文件的最大数量
+            maxInitialRequests: 3, // 入口js文件最大并行请求数量
+            automaticNameDelimiter:'~', // 名称连接符
+            name:true, // 可以使用命名规则
+            cacheGroups:{  // 分割chunk的组
+                // node_modules文件会被打包到vendors组的chunk中。 --> vendors~xxx.js
+                // 一定要满足上面的公共规则，如：大小超过30kb，至少被引用一次。
+                vendors:{
+                    test:/[\\/]node_modules[\\/]/,
+                    // 优先级
+                    priority: -10
+                },
+                default:{
+                    // 要提取的chunk最少被引用2次
+                    minChunks:2,
+                    // 优先级
+                    priority:-20,
+                    // 如果当前要打包的模块，和之前已经被提取的模块是同一个，就会复用，而不是重新打包模块
+                    reuseExistingChunk:true
+                }
+
+            }*/
+        },
+        // 将当前模块的记录其他模块的hash单独打包为一个文件 runtime
+        // 解决: 修改a文件导致b文件的contenthash变化
+        runtimeChunk:{
+            name: entrypoint=>`runtime-${entrypoint.name}`
+        },
+        minimizer:[
+            // 配置生产环境的压缩方案：js和css
+            new TerserWebpackPlugin({
+                // 开启缓存
+                cache:true,
+                // 开启多进程打包
+                parallel:true,
+                // 启动source-map
+                sourceMap:true
+
+            })
+        ]
+    }
+```
+### 35.webpack5的使用
+```
+webpack5中很多都是默认配置项，不用写，先做了一个简单的配置
+如下：
+module.exports = {
+    mode:'production'
+}
+相当于webapck4.0中这样的配置
+const {resolve} = require('path');
+module.exports = {
+    entry:'./src/js/index.js',
+    output:{
+        filename:'[name].js',
+        path:resolve(__dirname,'build')
+    },
+    mode:'production'
+}
+
+所以webpack5.0比4.0简洁了很多。后面我会专门总结一下webpack5.0，项目名字就叫webpack5.0-summary
+
+```
 
 
 
