@@ -505,6 +505,72 @@ externals:{
 ```
 ### 28.dll
 ```
+先创建 webpack.dll.js文件
+内容如下：
+/*
+使用dll技术，对某些库（第三方库：jquery、react、vue...）进行单独打包,
+好处是不用重复打包
+当你运行webpack时，默认查找webpack.config.js 配置文件
+需求：需要运行 webpack.dll.js 文件
+   ---> webpack --config webpack.dll.js
+*/ 
+const {resolve} = require('path');
+const webpack = require('webpack');
+module.exports = {
+    entry:{
+        // 最终打包生成的[name]---->jquery
+        // ['jquery'] --->要打包的库是jquery
+        jquery:['jquery']
+    },
+    output:{
+        filename:'[name].js',
+        path:resolve(__dirname,'dll'),
+        library:'[name]_[hash:8]',//打包的库里面向外暴露出去的内容叫什么名字
+    },
+    plugins:[
+        // 打包生成一个manifest.json --> 提供和jquery映射
+        new webpack.DllPlugin({
+            name:'[name]_[hash:8]',//映射库的暴露的内容名称
+            path:resolve(__dirname,'dll/manifest.json'), // 输出文件路径
+        })
+    ],
+    // 模式
+    mode:'production'
+}
+
+webpack.config.js中关于dll的配置如下：
+在plugins中的进行配置
+// 告诉webpack哪些库不参与打包，同时使用时的名称也得变~
+new webpack.DllReferencePlugin({
+  manifest:resolve(__dirname,'dll/manifest.json')
+}),
+
+```
+### 29.entry
+```
+  entry: 入口起点
+   1. string ---> './src/index.js'
+      单入口
+      打包形成一个chunk。 输出一个bundle文件。
+      此时chunk的名称默认是main
+   2. array ---> ['./src/index.js','./src/add.js']
+      多入口
+      所有入口文件最终只会形成一个chunk，输出出去只有一个bundle文件。
+      -->只有在HMR功能中让html热更新生效~
+   3. object
+      多入口
+      有几个入口文件就形成几个chunk，输出几个bundle文件
+      此时chunk的名称是key
+
+
+   ---> 特殊用法
+   {
+       // 所有入口文件最终只会形成一个chunk，输出出去只有一个bundle文件。
+       index:['./src/index.html','./src/count.js'],
+       // 形成一个chunk，输出一个bundle文件
+       add:'./src/add.js'
+   }   
+
 ```
 
 
