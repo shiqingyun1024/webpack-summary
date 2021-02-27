@@ -593,6 +593,57 @@ new webpack.DllReferencePlugin({
 ```
 ### 31.module
 ```
+module里面的配置
+// 单个loader用loader
+loader:'eslint-loader',
+// 多个loader用use
+use:['style-loader','css-loader']
+
+module的大概配置如下：
+// loader的配置
+    module:{
+        rules:[
+          //loader的配置 
+          {
+              test:/\.css$/,
+            //   多个loader用use
+            use:['style-loader','css-loader']
+          },
+          {
+              test:/\.js$/,
+            //   排除node_modules下的文件  相当于性能优化，不检查node_modules下的文件
+            exclude:/node_modules/,
+            // 只检查src下的js文件  相当于性能优化，只检查src文件夹下的js文件
+            include:resolve(__dirname,'src'),
+            // 优先执行
+            enforce:'pre',
+            // 延后执行
+            // enforce:'post',
+            //   单个loader用loader
+            loader:'eslint-loader',
+            // 选项配置
+            options:{}
+          },
+          {
+            //  以下配置只会生效一个,详情请看 20.oneOf这一章
+            oneOf:[]
+          }
+        ]
+    },
+```
+### 32.resolve
+```
+// 解析模块的规则
+    resolve:{
+      // 配置解析模块的路径别名: 优点是 简写路径, 缺点:路径没有提示
+      alias:{
+         '$css': resolve(__dirname,'src/css')
+      },
+      // 配置省略文件路径的后缀名,在文件中引入其他文件的时候可以省略文件名后缀
+      extensions:['.js','.json','.css'],
+      // 告诉webpack解析模块是去找哪个目录，当然也可以直接写成绝对路径 resolve(__dirname,'node_modules') 这种形式
+      modules:[resolve(__dirname,'node_modules'),'node_modules']
+  }
 ```
 
 
