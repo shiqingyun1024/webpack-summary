@@ -434,60 +434,59 @@ new WorkboxWebpackPlugin.GenerateSW({
 ```
 ### 26.多进程打包
 ```
-            {
-                // 需要在package.json中的eslintConfig进行配置 -->airbnb规则
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use:[
-                    /*
-                       开启多进程打包.  有利有弊
-                       其中进程启动大概为600ms，进程通信也有开销。
-                       只有工作消耗时间比较长，才需要多进程打包。
-                       平时js文件相对多一些，js进行babel-loader时花费的时间越长，使用进程打包的效果越明显。
-
-                       放在某一个loader的后面，这样就会对前面的loader进行多进程打包。
-                    */ 
-                    // 'thread-loader',
-                    {
-                        loader: 'thread-loader',
-                        options:{
-                            workers: 2 // 设置进程，这里是2个
-                        }
-                    },
-                    {
-                        loader: 'babel-loader',
-                        options: {
-                            // 预设：指示babel做怎样的兼容性处理。
-                            presets: [
-                                [
-                                    '@babel/preset-env',
-                                    {
-                                        // 按需加载
-                                        useBuiltIns: 'usage',//指定按需加载
-                                        // 指定core-js版本
-                                        corejs: {
-                                            version: 3
-                                        },
-                                        // 指定兼容性做到哪个版本浏览器
-                                        targets: {
-                                            chrome: '60',
-                                            firefox: '60',
-                                            ie: '9',
-                                            safari: '10',
-                                            edge: '17'
-        
-                                        }
-                                    }
-        
-                                ]
-                            ],
-                            // 开启babel缓存 ===== 为什么要开启缓存，因为假如这个项目中有100个js文件，但是我只改其中一个，这个时候另外99个文件就不需要重新打包了，直接使用缓存即可，这样打包构建速度更快更好。
-                            // 第二次构建时，会读取之前的缓存。
-                            cacheDirectory: true
-                        }
-                    }
-                ]
-            },
+ {
+    // 需要在package.json中的eslintConfig进行配置 -->airbnb规则
+    test: /\.js$/,
+    exclude: /node_modules/,
+    use:[
+      /*
+       开启多进程打包.  有利有弊
+       其中进程启动大概为600ms，进程通信也有开销。
+       只有工作消耗时间比较长，才需要多进程打包。
+       平时js文件相对多一些，js进行babel-loader时花费的时间越长，使用进程打包的效果越明显。
+       放在某一个loader的后面，这样就会对前面的loader进行多进程打包。
+      */ 
+        // 'thread-loader',
+        {
+          loader: 'thread-loader',
+          options:{
+            workers: 2 // 设置进程，这里是2个
+          }
+        },
+        {
+          loader: 'babel-loader',
+          options: {
+            // 预设：指示babel做怎样的兼容性处理。
+            presets: [
+             [
+                '@babel/preset-env',
+                {
+                     // 按需加载
+                     useBuiltIns: 'usage',//指定按需加载
+                     // 指定core-js版本
+                     corejs: {
+                       version: 3
+                     },
+                   // 指定兼容性做到哪个版本浏览器
+                  targets: {
+                    chrome: '60',
+                    firefox: '60',
+                    ie: '9',
+                    safari: '10',
+                    edge: '17'
+                  }
+                }
+             ]
+            ],
+            // 开启babel缓存 ===== 为什么要开启缓存，
+            // 因为假如这个项目中有100个js文件，但是我只改其中一个，这个时候另外99个文件就不需要重新打包了，
+            // 直接使用缓存即可，这样打包构建速度更快更好。
+            // 第二次构建时，会读取之前的缓存。
+            cacheDirectory: true
+         }
+        }
+    ]
+  },
 ```
 ### 27.externals
 ```
