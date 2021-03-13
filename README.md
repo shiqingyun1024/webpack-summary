@@ -786,4 +786,19 @@ module.exports = {
   * code split 代码分割
   * 懒加载、预加载  js代码。
   * pwa
-  
+
+
+  ### 37.React/Vue最新版本脚手架的详细配置
+
+  ### 38.基于webpack5打包原理分析
+
+  ### 39.基于webpack5自定义loader、自定义plugin等
+
+  ```
+  37、38、39章基于的环境参数：
+      环境参数：
+          @vue/cli  v4.5.7
+          create-react-app v3.4.1
+          webpack v5.1.3
+          nodejs v12.17.0
+  ```
