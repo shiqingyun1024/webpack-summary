@@ -1,6 +1,6 @@
-{
+module.exports = {
   mode: 'development',
-  context: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli',
+  context: '/',
   node: {
     setImmediate: false,
     process: 'mock',
@@ -11,14 +11,14 @@
     child_process: 'empty'
   },
   output: {
-    path: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/dist',
+    path: '//dist',
     filename: 'js/[name].js',
     publicPath: '/',
     chunkFilename: 'js/[name].js'
   },
   resolve: {
     alias: {
-      '@': '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/src',
+      '@': '//src',
       vue$: 'vue/dist/vue.runtime.esm.js'
     },
     extensions: [
@@ -31,8 +31,8 @@
     ],
     modules: [
       'node_modules',
-      '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules',
-      '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/@vue/cli-service/node_modules'
+      '//node_modules',
+      '//node_modules/@vue/cli-service/node_modules'
     ],
     plugins: [
       /* config.resolve.plugin('pnp') */
@@ -41,10 +41,10 @@
   },
   resolveLoader: {
     modules: [
-      '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/@vue/cli-plugin-babel/node_modules',
+      '//node_modules/@vue/cli-plugin-babel/node_modules',
       'node_modules',
-      '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules',
-      '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/@vue/cli-service/node_modules'
+      '//node_modules',
+      '//node_modules/@vue/cli-service/node_modules'
     ],
     plugins: [
       /* config.resolve.plugin('pnp-loaders') */
@@ -60,20 +60,20 @@
         use: [
           /* config.module.rule('vue').use('cache-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/cache-loader/dist/cjs.js',
+            loader: '//node_modules/cache-loader/dist/cjs.js',
             options: {
-              cacheDirectory: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/.cache/vue-loader',
+              cacheDirectory: '//node_modules/.cache/vue-loader',
               cacheIdentifier: '7c2b51da'
             }
           },
           /* config.module.rule('vue').use('vue-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-loader/lib/index.js',
+            loader: '//node_modules/vue-loader/lib/index.js',
             options: {
               compilerOptions: {
                 whitespace: 'condense'
               },
-              cacheDirectory: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/.cache/vue-loader',
+              cacheDirectory: '//node_modules/.cache/vue-loader',
               cacheIdentifier: '7c2b51da'
             }
           }
@@ -85,11 +85,11 @@
         use: [
           /* config.module.rule('images').use('url-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/url-loader/dist/cjs.js',
+            loader: '//node_modules/url-loader/dist/cjs.js',
             options: {
               limit: 4096,
               fallback: {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/file-loader/dist/cjs.js',
+                loader: '//node_modules/file-loader/dist/cjs.js',
                 options: {
                   name: 'img/[name].[hash:8].[ext]'
                 }
@@ -104,7 +104,7 @@
         use: [
           /* config.module.rule('svg').use('file-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/file-loader/dist/cjs.js',
+            loader: '//node_modules/file-loader/dist/cjs.js',
             options: {
               name: 'img/[name].[hash:8].[ext]'
             }
@@ -117,11 +117,11 @@
         use: [
           /* config.module.rule('media').use('url-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/url-loader/dist/cjs.js',
+            loader: '//node_modules/url-loader/dist/cjs.js',
             options: {
               limit: 4096,
               fallback: {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/file-loader/dist/cjs.js',
+                loader: '//node_modules/file-loader/dist/cjs.js',
                 options: {
                   name: 'media/[name].[hash:8].[ext]'
                 }
@@ -136,11 +136,11 @@
         use: [
           /* config.module.rule('fonts').use('url-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/url-loader/dist/cjs.js',
+            loader: '//node_modules/url-loader/dist/cjs.js',
             options: {
               limit: 4096,
               fallback: {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/file-loader/dist/cjs.js',
+                loader: '//node_modules/file-loader/dist/cjs.js',
                 options: {
                   name: 'fonts/[name].[hash:8].[ext]'
                 }
@@ -188,7 +188,7 @@
             use: [
               /* config.module.rule('css').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -196,7 +196,7 @@
               },
               /* config.module.rule('css').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -207,7 +207,7 @@
               },
               /* config.module.rule('css').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -223,7 +223,7 @@
             use: [
               /* config.module.rule('css').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -231,7 +231,7 @@
               },
               /* config.module.rule('css').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -239,7 +239,7 @@
               },
               /* config.module.rule('css').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -255,7 +255,7 @@
             use: [
               /* config.module.rule('css').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -263,7 +263,7 @@
               },
               /* config.module.rule('css').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -274,7 +274,7 @@
               },
               /* config.module.rule('css').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -289,7 +289,7 @@
             use: [
               /* config.module.rule('css').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -297,7 +297,7 @@
               },
               /* config.module.rule('css').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -305,7 +305,7 @@
               },
               /* config.module.rule('css').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -327,7 +327,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -335,7 +335,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -346,7 +346,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -362,7 +362,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -370,7 +370,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -378,7 +378,7 @@
               },
               /* config.module.rule('postcss').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -394,7 +394,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -402,7 +402,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -413,7 +413,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -428,7 +428,7 @@
             use: [
               /* config.module.rule('postcss').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -436,7 +436,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -444,7 +444,7 @@
               },
               /* config.module.rule('postcss').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -466,7 +466,7 @@
             use: [
               /* config.module.rule('scss').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -474,7 +474,7 @@
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -485,7 +485,7 @@
               },
               /* config.module.rule('scss').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -508,7 +508,7 @@
             use: [
               /* config.module.rule('scss').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -516,7 +516,7 @@
               },
               /* config.module.rule('scss').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -524,7 +524,7 @@
               },
               /* config.module.rule('scss').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -547,7 +547,7 @@
             use: [
               /* config.module.rule('scss').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -555,7 +555,7 @@
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -566,7 +566,7 @@
               },
               /* config.module.rule('scss').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -588,7 +588,7 @@
             use: [
               /* config.module.rule('scss').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -596,7 +596,7 @@
               },
               /* config.module.rule('scss').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -604,7 +604,7 @@
               },
               /* config.module.rule('scss').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -633,7 +633,7 @@
             use: [
               /* config.module.rule('sass').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -641,7 +641,7 @@
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -652,7 +652,7 @@
               },
               /* config.module.rule('sass').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -678,7 +678,7 @@
             use: [
               /* config.module.rule('sass').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -686,7 +686,7 @@
               },
               /* config.module.rule('sass').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -694,7 +694,7 @@
               },
               /* config.module.rule('sass').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -720,7 +720,7 @@
             use: [
               /* config.module.rule('sass').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -728,7 +728,7 @@
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -739,7 +739,7 @@
               },
               /* config.module.rule('sass').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -764,7 +764,7 @@
             use: [
               /* config.module.rule('sass').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -772,7 +772,7 @@
               },
               /* config.module.rule('sass').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -780,7 +780,7 @@
               },
               /* config.module.rule('sass').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -812,7 +812,7 @@
             use: [
               /* config.module.rule('less').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -820,7 +820,7 @@
               },
               /* config.module.rule('less').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -831,7 +831,7 @@
               },
               /* config.module.rule('less').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -854,7 +854,7 @@
             use: [
               /* config.module.rule('less').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -862,7 +862,7 @@
               },
               /* config.module.rule('less').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -870,7 +870,7 @@
               },
               /* config.module.rule('less').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -893,7 +893,7 @@
             use: [
               /* config.module.rule('less').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -901,7 +901,7 @@
               },
               /* config.module.rule('less').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -912,7 +912,7 @@
               },
               /* config.module.rule('less').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -934,7 +934,7 @@
             use: [
               /* config.module.rule('less').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -942,7 +942,7 @@
               },
               /* config.module.rule('less').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -950,7 +950,7 @@
               },
               /* config.module.rule('less').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -979,7 +979,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('vue-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -987,7 +987,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -998,7 +998,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1022,7 +1022,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('vue').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -1030,7 +1030,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -1038,7 +1038,7 @@
               },
               /* config.module.rule('stylus').oneOf('vue').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1062,7 +1062,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('normal-modules').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -1070,7 +1070,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2,
@@ -1081,7 +1081,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal-modules').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1104,7 +1104,7 @@
             use: [
               /* config.module.rule('stylus').oneOf('normal').use('vue-style-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/vue-style-loader/index.js',
+                loader: '//node_modules/vue-style-loader/index.js',
                 options: {
                   sourceMap: false,
                   shadowMode: false
@@ -1112,7 +1112,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal').use('css-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/css-loader/dist/cjs.js',
+                loader: '//node_modules/css-loader/dist/cjs.js',
                 options: {
                   sourceMap: false,
                   importLoaders: 2
@@ -1120,7 +1120,7 @@
               },
               /* config.module.rule('stylus').oneOf('normal').use('postcss-loader') */
               {
-                loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/postcss-loader/src/index.js',
+                loader: '//node_modules/postcss-loader/src/index.js',
                 options: {
                   sourceMap: false,
                   plugins: [
@@ -1149,15 +1149,15 @@
         use: [
           /* config.module.rule('js').use('cache-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/cache-loader/dist/cjs.js',
+            loader: '//node_modules/cache-loader/dist/cjs.js',
             options: {
-              cacheDirectory: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/.cache/babel-loader',
+              cacheDirectory: '//node_modules/.cache/babel-loader',
               cacheIdentifier: '07c7a7fc'
             }
           },
           /* config.module.rule('js').use('babel-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/babel-loader/lib/index.js'
+            loader: '//node_modules/babel-loader/lib/index.js'
           }
         ]
       },
@@ -1167,12 +1167,12 @@
         test: /\.(vue|(j|t)sx?)$/,
         exclude: [
           /node_modules/,
-          '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/@vue/cli-service/lib'
+          '//node_modules/@vue/cli-service/lib'
         ],
         use: [
           /* config.module.rule('eslint').use('eslint-loader') */
           {
-            loader: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/eslint-loader/index.js',
+            loader: '//node_modules/eslint-loader/index.js',
             options: {
               extensions: [
                 '.js',
@@ -1183,7 +1183,7 @@
               cacheIdentifier: '5045fbda',
               emitWarning: false,
               emitError: false,
-              eslintPath: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/node_modules/eslint',
+              eslintPath: '//node_modules/eslint',
               formatter: undefined
             }
           }
@@ -1281,7 +1281,7 @@
       {
         title: 'vue_cli',
         templateParameters: function () { /* omitted long function */ },
-        template: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/public/index.html'
+        template: '//public/index.html'
       }
     ),
     /* config.plugin('preload') */
@@ -1306,8 +1306,8 @@
     new CopyPlugin(
       [
         {
-          from: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/public',
-          to: '/Users/shixiaolin/Documents/github/webpack/webpack-summary/38.vue_cli/vue_cli/dist',
+          from: '//public',
+          to: '//dist',
           toType: 'dir',
           ignore: [
             '.DS_Store',
