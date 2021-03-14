@@ -788,11 +788,22 @@ module.exports = {
   * pwa
 
 
-  ### 37.React/Vue最新版本脚手架的详细配置
+  ### 37.React最新版本脚手架的详细配置
 
-  ### 38.基于webpack5打包原理分析
+  ### 38.Vue最新版本脚手架的详细配置
+  ```
+  检查vue-cli中的配置的命令，并输出到某一个文件中(例如下面是输出到webpack.dev.js中)
+  vue inspect --mode=development > webpack.dev.js
+  所以研究vue-cli中开发环境的配置看webpack.dev.js文件就可以了
 
-  ### 39.基于webpack5自定义loader、自定义plugin等
+  vue inspect --mode=production > webpack.prod.js
+  所以研究vue-cli中生产环境的配置看webpack.prod.js文件就可以了
+
+  ```
+
+  ### 39.基于webpack5打包原理分析
+
+  ### 40.基于webpack5自定义loader、自定义plugin等
 
   ```
   37、38、39章基于的环境参数：
