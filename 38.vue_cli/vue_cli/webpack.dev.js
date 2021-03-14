@@ -1,6 +1,6 @@
 module.exports = {
   mode: 'development',
-  // context代表根目录 英文意思：环境；上下文；
+  // context代表根目录 英文意思：环境；上下文；下面所有的//中的第一个/代表的都是context的内容
   context: '/',
   node: {
     setImmediate: false,
@@ -58,6 +58,7 @@ module.exports = {
     ]
   },
   module: {
+    // noParse 不解析
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
     rules: [
       /* config.module.rule('vue') */
