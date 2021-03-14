@@ -1,5 +1,6 @@
 module.exports = {
   mode: 'development',
+  // context代表根目录 英文意思：环境；上下文；
   context: '/',
   node: {
     setImmediate: false,
@@ -10,17 +11,22 @@ module.exports = {
     tls: 'empty',
     child_process: 'empty'
   },
+  // 输出文件
   output: {
+    // 第一个/代表的是 context根目录
     path: '//dist',
     filename: 'js/[name].js',
     publicPath: '/',
     chunkFilename: 'js/[name].js'
   },
+  // 解析模块
   resolve: {
     alias: {
+      // 第一个/代表的是 context根目录
       '@': '//src',
       vue$: 'vue/dist/vue.runtime.esm.js'
     },
+    // 可以省略的扩展名
     extensions: [
       '.mjs',
       '.js',
