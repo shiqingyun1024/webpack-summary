@@ -9,7 +9,14 @@ module.exports = {
                 test: /\.js$/,
                 // loader:path.resolve(__dirname,'loaders','loader1')
                 // 因为在resolveLoader中配置了寻找loader的路径，所以可以直接写成下面这样
-                loader:'loader1'
+                // loader:'loader1'
+
+                // 如果有多个loader的话，要按照顺序从下到上，从左往右
+                use:[
+                    'loader1',
+                    'loader2',
+                    'loader3'
+                ]
             }
 
         ]
