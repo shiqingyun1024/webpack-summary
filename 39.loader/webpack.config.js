@@ -29,5 +29,6 @@ module.exports = {
            path.resolve(__dirname,'loaders')
        ]
     },
-    mode:'development'
+    // mode:'development'
+    mode:'production'
 }

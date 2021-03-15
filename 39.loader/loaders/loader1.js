@@ -1,8 +1,17 @@
 // loader 本质上是一个函数
 // content是文件的内容，map是文件的映射信息，meta是文件的元信息
+
+// 同步loader
+// module.exports = function(content,map,meta){
+//     console.log(111);
+//     return content;
+// }
+
+// 同步loader 的另外一种写法 使用this.callback来代替return
 module.exports = function(content,map,meta){
     console.log(111);
-    return content;
+    // 有没有错误，没有就传null
+    this.callback(null,content,map,meta)
 }
 
 
