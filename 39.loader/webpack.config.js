@@ -15,7 +15,13 @@ module.exports = {
                 use:[
                     'loader1',
                     'loader2',
-                    'loader3'
+                    // loader中怎么获取options呢，请看loader3.js
+                    {
+                      loader:'loader3',
+                      options:{
+                          name:'jack'
+                      }
+                    }
                 ]
             }
 
