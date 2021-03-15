@@ -1,11 +1,13 @@
 // loader 本质上是一个函数
 
-// loader-utils是webpack为我们提供一个获取options的方法的库
+// loader-utils是webpack为我们提供一个库(要npm自己安装一下),其中getOptions方法来专门获取options选项
 const { getOptions } = require('loader-utils');
 
 // content是文件的内容，map是文件的映射信息，meta是文件的元信息
 module.exports = function(content,map,meta){
-    console.log(333);
+    const options = getOptions(this);
+    console.log(333,options);
+    
     return content;
 }
 

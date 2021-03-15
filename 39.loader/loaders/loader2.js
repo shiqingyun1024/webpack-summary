@@ -12,7 +12,7 @@ module.exports = function(content,map,meta){
     const callback = this.async();
     setTimeout(()=>{
         callback(null,content);
-    },3000);
+    },1000);
 }
 
 // pitch方法是按照webpack.config.js中的use顺序从上往下执行的，所以再打印pitch 222
