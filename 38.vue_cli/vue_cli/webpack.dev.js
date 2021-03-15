@@ -191,6 +191,7 @@ module.exports = {
         oneOf: [
           /* config.module.rule('css').oneOf('vue-modules') */
           {
+            // <style lang=module></style>  对这样的文件进行处理
             resourceQuery: /module/,
             use: [
               /* config.module.rule('css').oneOf('vue-modules').use('vue-style-loader') */
@@ -258,6 +259,7 @@ module.exports = {
           },
           /* config.module.rule('css').oneOf('normal-modules') */
           {
+            // .module.xx 文件
             test: /\.module\.\w+$/,
             use: [
               /* config.module.rule('css').oneOf('normal-modules').use('vue-style-loader') */
