@@ -7,8 +7,6 @@ const { getOptions } = require('loader-utils');
 module.exports = function(content,map,meta){
     console.log(333);
     return content;
-    
-
 }
 
 // pitch方法是按照webpack.config.js中的use顺序从上往下执行的，所以最后打印pitch 333

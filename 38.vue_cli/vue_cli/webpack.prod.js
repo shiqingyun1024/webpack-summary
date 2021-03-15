@@ -1,5 +1,6 @@
 module.exports = {
   mode: 'production',
+  // 同开发环境的一样
   context: '/',
   devtool: 'source-map',
   node: {
