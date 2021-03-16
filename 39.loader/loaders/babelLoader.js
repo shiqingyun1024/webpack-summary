@@ -29,7 +29,10 @@ module.exports = function (content, map, meta) {
     // 创建异步
     const callback = this.async();
 
-    // 使用babel
+    // 使用babel编译代码
+    transform(content,options)
+       .then((code,map)=>callback(null,code,map,meta))
+       .catch((e) => callback(e))
 
 
 }
