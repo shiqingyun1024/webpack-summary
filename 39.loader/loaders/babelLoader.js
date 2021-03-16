@@ -5,8 +5,12 @@
 const { getOptions } = require('loader-utils')
 // 校验options是否满足校验规则
 const { validate } = require('schema-utils')
+// babel编译的核心库
+const babel = require('@babel/core')
 
 const babelSchema = require('./babelSchema.json');
+
+
 module.exports = function (content, map, meta) {
     //  获取loader的options配置
     const options = getOptions(this);
@@ -14,5 +18,11 @@ module.exports = function (content, map, meta) {
     validate(babelSchema, options, {
         name: 'Babel Loader'
     })
+
+    // 创建异步
+    const callback = this.async();
+
+    // 使用babel
+
 
 }
