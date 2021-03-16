@@ -12,17 +12,23 @@ module.exports = {
                 // loader:'loader1'
 
                 // 如果有多个loader的话，要按照顺序从下到上，从左往右
-                use:[
-                    'loader1',
-                    'loader2',
-                    // loader中怎么获取options呢，请看loader3.js
-                    {
-                      loader:'loader3',
-                      options:{
-                          name:'jack'
-                      }
-                    }
-                ]
+                // use:[
+                //     'loader1',
+                //     'loader2',
+                //     // loader中怎么获取options呢，请看loader3.js
+                //     {
+                //       loader:'loader3',
+                //       options:{
+                //           name:'jack'
+                //       }
+                //     }
+                // ]
+                loader: 'babelLoader',
+                options:{
+                    presets:[
+                        '@babel/preset-env'
+                    ]
+                }
             }
 
         ]
