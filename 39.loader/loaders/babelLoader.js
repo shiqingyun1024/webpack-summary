@@ -6,9 +6,16 @@ const { getOptions } = require('loader-utils')
 // 校验options是否满足校验规则
 const { validate } = require('schema-utils')
 // babel编译的核心库
-const babel = require('@babel/core')
+const babel = require('@babel/core');
+// util是node中的一个方法库
+const util = require('util');
 
 const babelSchema = require('./babelSchema.json');
+
+// babel.transform用来编译代码的方法
+// 是一个普通的异步方法
+// util.promisify将普通异步方法转化成基于promise的异步方法
+const transform = util.promisify(babel.transform);
 
 
 module.exports = function (content, map, meta) {
