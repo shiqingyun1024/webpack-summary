@@ -1,0 +1,11 @@
+// 定义options中的校验规则   这里面的内容是schema.json的内容，加了相应的注释（json中不允许加字符串）
+{
+    "type":"object",  // 类型为 object
+    "properties":{  // 都包括哪些属性
+        "name":{  // name属性
+            "type":"string",  // name属性的类型和默认值
+            "description":"名称~"
+        }
+    },
+    "additionalProperties":true  // 允不允许追加其他属性
+}
