@@ -20,7 +20,7 @@ const transform = util.promisify(babel.transform);
 
 module.exports = function (content, map, meta) {
     //  获取loader的options配置
-    const options = getOptions(this);
+    const options = getOptions(this) || {};
     // 校验babel的options的配置
     validate(babelSchema, options, {
         name: 'Babel Loader'
@@ -31,7 +31,8 @@ module.exports = function (content, map, meta) {
 
     // 使用babel编译代码
     transform(content,options)
-       .then((code,map)=>callback(null,code,map,meta))
+    // 这一步先记住这样写
+       .then(({code,map})=>callback(null,code,map,meta))
        .catch((e) => callback(e))
 
 
