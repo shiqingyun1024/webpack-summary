@@ -804,8 +804,8 @@ module.exports = {
   ### 39.loader
   ```
   loader的原理，loader本质上是一个函数
-  同步loader
-  异步loader
+  同步loader的写法
+  异步loader的写法
   模仿babel-loader写了一个babelLoader
   ```
 
