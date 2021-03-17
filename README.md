@@ -801,7 +801,14 @@ module.exports = {
 
   ```
 
-  ### 39.基于webpack5打包原理分析
+  ### 39.loader
+  ```
+  loader的原理，loader本质上是一个函数
+  同步loader
+  异步loader
+  模仿babel-loader写了一个babelLoader
+  ```
+
 
   ### 40.基于webpack5自定义loader、自定义plugin等
 

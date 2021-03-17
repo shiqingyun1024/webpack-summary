@@ -31,9 +31,7 @@ module.exports = function (content, map, meta) {
 
     // 使用babel编译代码
     transform(content,options)
-    // 这一步先记住这样写
+    // 这一步先记住这样写  
        .then(({code,map})=>callback(null,code,map,meta))
        .catch((e) => callback(e))
-
-
 }
