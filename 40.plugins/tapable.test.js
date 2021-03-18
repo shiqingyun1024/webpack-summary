@@ -6,6 +6,13 @@ class Lesson{
             go:new SyncHook(['address'])
         }
     }
+    tap(){
+        // 往hooks容器中注册事件/添加回调函数
+        this.hooks.go.tap('class0318',(address)=>{
+            console.log('class0318',address);
+        })
+
+    }
 }
 
 
