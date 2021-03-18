@@ -11,9 +11,17 @@ class Lesson{
         this.hooks.go.tap('class0318',(address)=>{
             console.log('class0318',address);
         })
+    }
 
+    start(){
+        // 触发hooks
+        this.hooks.go.call('c318');
     }
 }
+
+const l = new Lesson();
+l.tap();
+l.start();
 
 
 
