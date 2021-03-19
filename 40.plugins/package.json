@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "tapable": "^2.2.0",
-    "webpack": "^5.26.3",
-    "webpack-cli": "^4.5.0"
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
   }
 }
