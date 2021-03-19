@@ -1,4 +1,4 @@
-const Plugin1 = require('./plugins/Plugin1');
+const Plugin1 = require('./plugins/Plugin1.js');
 
 module.exports = {
     plugins:[
