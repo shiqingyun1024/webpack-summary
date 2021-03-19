@@ -10,10 +10,14 @@ class Plugin1{
         complier.hooks.afterEmit.tap('Plugin1',(compilation)=>{
             console.log('afterEmit.tap');
          })
+         complier.hooks.done.tap('Plugin1',(compilation)=>{
+            console.log('doneEmit.tap');
+         })
     }
 
 }
 module.export = Plugin1;
+// export default Plugin1;
 
 
 
