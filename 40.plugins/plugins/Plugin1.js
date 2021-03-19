@@ -7,6 +7,20 @@ class Plugin1{
         complier.hooks.emit.tap('Plugin1',(compilation)=>{
            console.log('emit.tap');
         })
+        complier.hooks.emit.tapAsync('Plugin1',(compilation,cb)=>{
+            setTimeout(()=>{
+                console.log('emit.tapAsync 111');
+                cd();
+            },1000)
+         })
+         complier.hooks.emit.tapPromise('Plugin1',(compilation)=>{
+             return new Promise(()=>{
+                setTimeout(()=>{
+                    console.log('emit.tapPromise 111');
+                    resolve();
+                },1000)
+             })
+         })
         complier.hooks.afterEmit.tap('Plugin1',(compilation)=>{
             console.log('afterEmit.tap');
          })
