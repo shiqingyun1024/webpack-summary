@@ -820,3 +820,21 @@ module.exports = {
           webpack v5.1.3
           nodejs v12.17.0
   ```
+  ### 41.webpack5.0相关的总结
+  ```
+  >> 初始webpack5
+  >> webpack安装和基本体验
+  >> webpack的五个核心概念
+  >> 打包样式资源
+  >> 打包HTML资源
+  >> 打包图片资源
+  >> 打包其他资源
+  >> devServer配置与应用
+  >> 配置可用的基本开发环境
+  >> 开发环境优化
+  >> 生产环境优化
+  >> webpack配置文件内容详解
+  >> 配置标准的开发和生产环境案例
+  >> 配置jQuery+BootStrap的开发环境
+  
+  ```
