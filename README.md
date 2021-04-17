@@ -14,6 +14,7 @@
 ### 02 webpack初体验
 
 ```
+npm view webpack versions  查看webpack所有的版本
 先安装webpack
 npm i webpack webpack-cli -g   // 全局安装一下webpack
 npm i webpack webpack-cli -D  //  当前目录下安装 webpack
