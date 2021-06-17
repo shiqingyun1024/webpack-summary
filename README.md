@@ -590,6 +590,67 @@ new webpack.DllReferencePlugin({
         libraryTarget:'window',
         // libraryTarget:'commonjs' // 这个时候main.js中的开头是 exports["main"]
     },
+    
+// 下面主要对library和libraryTarget做一个详细的说明
+webpack默认打包之后的代码形式是这样的（假设我导出 module.exports = 'hello world' ）
+(function () {
+  return 'hello world'
+})()
+
+注意：代码是一个自执行函数，外界想获取函数里面的返回值怎么办（也就是模块的导出结果 hello world ），那么就需要配置一个 library 
+const path = require('path')
+
+module.exports = {
+  entry: './src/utils.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    library: 'result'
+  }
+}
+
+然后打包之后是这样的形式
+var result = (function () {
+  return 'hello world'
+})()
+
+通过把导出的结果赋值给 result 变量，配置了 library: 'result' 
+
+将打包之后的文件引入到HTML文件中，可以直接使用！（假设打包的文件名是bundle.js）
+<body>
+  <script src="./dist/bundle.js"></script>
+  <script>
+    console.log(result)
+  </script>
+</body>
+
+如果你不想在HTML中使用，想在一个JS文件里面通过 require 导入来使用，需要这么配置
+const path = require('path')
+
+module.exports = {
+  entry: './src/utils.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    libraryTarget: 'commonjs2'
+  }
+}
+
+打包之后代码是这样的
+
+module.exports = (function () {
+  return 'hello world'
+})()
+
+可以在JS文件中导入来使用
+
+import result from './bundle'
+
+console.log(result)
+同时支持import和require语法引入
+
+两个配置同时使用，生效的是第二种模式。
+
 ```
 ### 31.module
 ```
