@@ -651,6 +651,54 @@ console.log(result)
 
 两个配置同时使用，生效的是第二种模式。
 
+1.首先是libraryTarget的配置，我们使用umd方式，这样便可以用任何一种引入方式，即支持cmd（commonjs），amd（requirejs），及全局
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory);
+    } else if (typeof exports === 'object') {
+        // Node, CommonJS之类的
+        module.exports = factory(require('jquery'));
+    } else {
+        // 浏览器全局变量(root 即 window)
+        root.returnExports = factory(root.jQuery);
+    }
+}(this, function ($) {
+    //    方法
+    function myFunc(){};
+  
+    //    暴露公共方法
+    return myFunc;
+}));
+
+2.library和libraryTarget的使用
+
+有时我们想开发一个库，如lodash，underscore这些工具库，这些库既可以用commonjs和amd方式使用也可以用script方式引入。
+
+这时候我们需要借助library和libraryTarget，我们只需要用ES6来编写代码，编译成通用的UMD就交给webpack了。
+
+例如上面的tools
+exports default {
+    add: function (num1, num2) {
+         return num1 + num2; 
+    }         
+}
+
+接下来配置webpack
+  
+module.exports = {
+  entry: {
+        myTools: "./src/tools.js"     
+    },
+  output: {
+        path: path.resolve(_dirname, "build"),
+        filename: [name].js,
+        chunkFilename: [name].min.js,
+        libraryTarget: "umd",
+        library: "tools"   
+   }          
+}
+　　library指定的是你require时候的模块名。
 ```
 ### 31.module
 ```
