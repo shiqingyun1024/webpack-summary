@@ -930,7 +930,7 @@ module.exports = {
           webpack v5.1.3
           nodejs v12.17.0
   ```
-  ### 41.webpack5.0相关的总结
+  ### webpack5.0相关的总结
   ```
   >> 初始webpack5
   >> webpack安装和基本体验
@@ -947,4 +947,9 @@ module.exports = {
   >> 配置标准的开发和生产环境案例
   >> 配置jQuery+BootStrap的开发环境
   
+  ```
+  ### 41.Vue打包优化-加快首屏加载速度
+  ```
+  使用webpack-bundle-analyzer这个插件来分析打包之后每个插件的大小。
+  然后通过引入CDN的方式来减小打包的体积。
   ```
